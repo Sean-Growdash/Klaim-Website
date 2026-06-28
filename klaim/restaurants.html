@@ -119,19 +119,16 @@
   .why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .why-card{padding:36px 30px;border-radius:24px;border:1.5px solid var(--ink);background:var(--white);min-height:300px;display:flex;flex-direction:column;gap:18px;transition:transform .2s}
   .why-card:hover{transform:translateY(-4px)}
-  .why-card.hi{background:var(--lime)}
-  .why-card.alt{background:var(--ink);color:var(--cream)}
-  .why-card.alt2{background:var(--pink);color:var(--ink)}
+  .why-card:nth-child(even){background:var(--ink);color:var(--cream)}
   .why-card .num{font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
-  .why-card.alt .num{color:rgba(244,237,230,.6)}
+  .why-card:nth-child(even) .num{color:rgba(244,237,230,.6)}
   .why-card .ic{width:58px;height:58px;border:1.5px solid currentColor;border-radius:18px;display:flex;align-items:center;justify-content:center;color:var(--ink);background:rgba(255,255,255,.24)}
-  .why-card.alt .ic{color:var(--lime);background:rgba(199,255,79,.08)}
+  .why-card:nth-child(even) .ic{color:var(--lime);background:rgba(199,255,79,.08)}
   .why-card .ic svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   .why-card .ic .fill{fill:currentColor;stroke:none}
   .why-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
   .why-card p{font-size:15px;line-height:1.5;font-weight:500;color:var(--muted)}
-  .why-card.alt p{color:rgba(244,237,230,.78)}
-  .why-card.hi p,.why-card.alt2 p{color:rgba(47,25,107,.78)}
+  .why-card:nth-child(even) p{color:rgba(244,237,230,.78)}
 
   /* ROI */
   .roi{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:stretch}
@@ -607,7 +604,7 @@
         <div class="price">£0</div>
         <div class="price-sub">Setup · monthly · annual</div>
         <ul>
-          <li>15% take rate on cashback (we earn when you do)</li>
+          <li>£1.50 per verified transaction, deducted from the cashback amount</li>
           <li>Set your own monthly cap — we never exceed</li>
           <li>Full operator dashboard with cohort analysis</li>
           <li>Weight offers by service (Mon/Tue/Wed boost etc.)</li>
@@ -649,8 +646,8 @@
         <p style="color:rgba(244,237,230,.75)">Each Klaimer has linked their bank via Open Banking. When they pay at your venue, we see the transaction (amount, time, MID) and match it against the offer they redeemed. Cashback only fires on a positive match — so every attributed cover has a real, settled card receipt behind it.</p>
       </details>
       <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
-        <summary>Can we cap budget by service or by day?</summary>
-        <p style="color:rgba(244,237,230,.75)">Yes. Monthly cap, weekly cap, and per-service cap (e.g. "only fire Mon-Wed lunch"). Dynamic cashback amounts per service too — push more on quiet shifts, less on the Friday rush.</p>
+        <summary>Can we cap the campaign budget?</summary>
+        <p style="color:rgba(244,237,230,.75)">Yes. You set the campaign budget before launch. Drops go live on Mondays and Fridays; once your drop is live, the campaign stays active in that drop until the drop ends or the budget is fully utilised.</p>
       </details>
       <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
         <summary>Do we need to change anything at the till?</summary>
@@ -658,7 +655,7 @@
       </details>
       <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
         <summary>How does the take rate actually work?</summary>
-        <p style="color:rgba(244,237,230,.75)">We charge 15% of the cashback amount, on completed covers only. So if you offer £10 cashback and a diner redeems, you pay £10 to the diner + £1.50 to Klaim. £11.50 all-in for a real, attributed, repeat-eligible cover. That's it.</p>
+        <p style="color:rgba(244,237,230,.75)">We take £1.50 per verified transaction, deducted from the cashback amount.</p>
       </details>
       <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
         <summary>Can we kill it if it's not working?</summary>

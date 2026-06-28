@@ -170,7 +170,10 @@
   .step:nth-child(3){background:var(--ink);color:var(--cream)}
   .step .num{font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;color:var(--muted);letter-spacing:.05em}
   .step:nth-child(3) .num{color:rgba(244,237,230,.6)}
-  .step .ic{font-size:48px}
+  .step .ic{width:58px;height:58px;border:1.5px solid currentColor;border-radius:18px;display:flex;align-items:center;justify-content:center;color:var(--ink);background:rgba(255,255,255,.24)}
+  .step:nth-child(3) .ic{color:var(--lime);background:rgba(199,255,79,.08)}
+  .step .ic svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .step .ic .fill{fill:currentColor;stroke:none}
   .step h3{font-family:'Bricolage Grotesque',sans-serif;font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1.05}
   .step p{font-size:15px;line-height:1.55;font-weight:500}
   .step:nth-child(3) p{color:rgba(244,237,230,.75)}
@@ -195,17 +198,22 @@
   .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .feat{padding:40px;border-radius:24px;border:1.5px solid var(--ink);background:var(--cream);display:flex;flex-direction:column;gap:20px;min-height:380px;justify-content:space-between;transition:transform .2s}
   .feat:hover{transform:translateY(-4px)}
-  .feat.lime{background:var(--lime)}
+  .feat.lime{background:transparent}
   .feat.ink{background:var(--ink);color:var(--cream)}
   .feat.ink h3,.feat.ink p{color:var(--cream)}
-  .feat .ic{font-size:36px;width:64px;height:64px;border-radius:16px;background:var(--white);display:flex;align-items:center;justify-content:center;border:1.5px solid var(--ink)}
+  .feat .ic{font-size:36px;width:64px;height:64px;border-radius:16px;background:var(--white);display:flex;align-items:center;justify-content:center;border:1.5px solid var(--ink);color:var(--ink)}
   .feat.ink .ic{background:var(--lime)}
+  .feat .ic svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .feat .ic .fill{fill:currentColor;stroke:none}
   .feat h3{font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:700;letter-spacing:-.03em;line-height:1.05}
   .feat p{font-size:16px;line-height:1.5;font-weight:500;color:var(--muted)}
   .feat.lime p{color:var(--ink-deep)}
   .feat.ink p{color:rgba(244,237,230,.78)}
 
   .feat-mock{margin-top:auto;padding:18px;background:var(--white);border-radius:14px;border:1px solid var(--ink);display:flex;align-items:center;gap:14px}
+  .feat-mock .ic{width:36px;height:36px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center;border:1.5px solid var(--ink);color:var(--ink);flex:none}
+  .feat-mock .ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .feat-mock .ic .fill{fill:currentColor;stroke:none}
   .feat.ink .feat-mock{background:rgba(255,255,255,.08);border-color:rgba(244,237,230,.15)}
   .feat-mock .stack-av{display:flex}
   .feat-mock .av{width:34px;height:34px;border-radius:50%;border:2px solid var(--white);margin-left:-10px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--white)}
@@ -331,7 +339,7 @@
       <div>
         <span class="eyebrow">🇬🇧 Now live in London · invite-only</span>
         <h1 class="hero-title display">Get paid<br/>to eat <span class="hl">out.</span></h1>
-        <p class="hero-sub">Twice-weekly cashback drops to the best spots in Soho, Shoreditch, Borough &amp; beyond — every Monday and Friday at 9am. Zero codes. Zero coupons. Just tap the card you already use and we'll fire the cash to your bank before pudding lands.</p>
+        <p class="hero-sub">Twice-weekly cashback drops to the best spots in London — every Monday and Friday at 9am. Zero codes. Zero coupons. Just tap the card you already use and we'll fire the cash to your bank before pudding lands.</p>
         <div class="hero-actions">
           <a href="#download" class="pill-btn lime lg">Put me on the list →</a>
           <a href="#how" class="pill-btn lg">See how it works</a>
@@ -482,19 +490,41 @@
     <div class="steps">
       <div class="step">
         <div class="num">01</div>
-        <div class="ic">📱</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="9" y="11" width="14" height="13" rx="2"/>
+            <path d="M9 15h14"/>
+            <path d="M16 11v13"/>
+            <path d="M11 11c0-1.8 1.2-3 2.5-3s2.5 1.2 2.5 3"/>
+            <path d="M18.5 11c0-1.8 1.2-3 2.5-3"/>
+          </svg>
+        </div>
         <h3>Unwrap each drop</h3>
         <p>Every Monday and Friday at 9am, three personalised rewards land in your app — restaurants matched to your taste, hand-picked across London, never the chains.</p>
       </div>
       <div class="step">
         <div class="num">02</div>
-        <div class="ic">💳</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="6" y="8" width="20" height="16" rx="3"/>
+            <path d="M6 13h20M11 19h7"/>
+            <circle class="fill" cx="22" cy="19" r="1.7"/>
+          </svg>
+        </div>
         <h3>Pay with your card</h3>
         <p>Walk in, sit down, eat the bacon naan, pay with your linked card. Nothing to scan, nothing to mention. The bill is the bill — we handle the rest in the background.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
-        <div class="ic">💸</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <path d="M6 14h20v12H6z"/>
+            <path d="M4 14h24"/>
+            <path d="M16 20v6"/>
+            <path d="M13 23l3 3 3-3"/>
+            <path d="M10 10h12"/>
+          </svg>
+        </div>
         <h3>Cash in your bank</h3>
         <p>Within minutes of paying, the cashback lands in your nominated UK current account — Monzo, Starling, Barclays, whoever. Faster Payments. Real money. Spendable.</p>
       </div>
@@ -510,7 +540,7 @@
         <h2 class="display">Not points. Not <span class="hl">vouchers.</span> Just money.</h2>
         <p>Most "rewards" apps give you a coupon code you'll forget to use, or 47 points worth £0.13. Klaim sends actual pounds to the actual bank account you actually use. Spendable. Withdrawable. Yours. Weird, right?</p>
         <ul>
-          <li>Faster Payments to any UK bank — usually 30–60 seconds</li>
+          <li>Payments to any UK bank</li>
           <li>Up to £50 back per drop, no minimum spend, no asterisks</li>
           <li>Free forever for diners — restaurants foot the bill</li>
           <li>No expiry, no fine print, no "oh wait actually…"</li>
@@ -561,7 +591,14 @@
     </div>
     <div class="feat-grid">
       <div class="feat lime">
-        <div class="ic">👥</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <circle cx="12" cy="12" r="3"/>
+            <circle cx="20" cy="13" r="3"/>
+            <path d="M6 24a6 6 0 0 1 12 0"/>
+            <path d="M16 22a5 5 0 0 1 10 0"/>
+          </svg>
+        </div>
         <div>
           <h3>Drop Buddies</h3>
           <p>Spot the same restaurant in your friend's drop and lock it in together. Coordinate the visit, split the table, eat as a crew. The new running club, but with bone marrow.</p>
@@ -576,29 +613,56 @@
         </div>
       </div>
       <div class="feat ink">
-        <div class="ic">🔄</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <path d="M8 13h13l-3-3"/>
+            <path d="M24 19H11l3 3"/>
+          </svg>
+        </div>
         <div>
           <h3>Trade your Klaim</h3>
           <p>Got a sushi drop but craving curry? Offer a trade with any friend in London. They accept, you swap, instantly. No codes change hands, no awkward Venmo moments.</p>
         </div>
         <div class="feat-mock">
-          <div class="ic" style="width:36px;height:36px;font-size:18px;background:var(--lime)">🎉</div>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 32 32">
+              <path d="M9 16l4 4 10-10"/>
+            </svg>
+          </div>
           <div class="tx" style="color:var(--cream)">Trade accepted with Fatima A.<span>You got: Pizzeria Mozza · she got: Boba Lab</span></div>
         </div>
       </div>
-      <div class="feat">
-        <div class="ic">🎁</div>
+      <div class="feat ink">
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="9" y="11" width="14" height="13" rx="2"/>
+            <path d="M9 15h14"/>
+            <path d="M16 11v13"/>
+            <path d="M11 11c0-1.8 1.2-3 2.5-3s2.5 1.2 2.5 3"/>
+            <path d="M18.5 11c0-1.8 1.2-3 2.5-3"/>
+          </svg>
+        </div>
         <div>
           <h3>Gift a Klaim</h3>
           <p>Send a friend their first cashback at a spot you love. They redeem it, you both get hyped about the place. Cheaper than buying them dinner, way more personal than a Pret giftcard.</p>
         </div>
         <div class="feat-mock">
-          <div class="ic" style="width:36px;height:36px;font-size:18px;background:var(--pink)">💝</div>
-          <div class="tx">"Try this — it's unreal" → Aisha<span>Gift sent · St. JOHN · £32 back</span></div>
+          <div class="ic" style="background:var(--pink)" aria-hidden="true">
+            <svg viewBox="0 0 32 32">
+              <path d="M16 24s-8-5.2-8-10a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 24 14c0 4.8-8 10-8 10z"/>
+            </svg>
+          </div>
+          <div class="tx" style="color:var(--cream)">"Try this — it's unreal" → Aisha<span>Gift sent · St. JOHN · £32 back</span></div>
         </div>
       </div>
       <div class="feat">
-        <div class="ic">📰</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="8" y="6" width="16" height="20" rx="2"/>
+            <path d="M12 12h8M12 16h8M12 20h5"/>
+            <path d="M21 23l2 2 4-4"/>
+          </svg>
+        </div>
         <div>
           <h3>Verified social feed</h3>
           <p>See what your friends actually ate this week — verified by their card, not by a vibes-based Instagram caption. The first social feed where every recommendation comes with a real receipt behind it.</p>
@@ -607,7 +671,7 @@
           <div class="stack-av">
             <div class="av" style="background:#7DD3FC;color:var(--ink)">SA</div>
           </div>
-          <div class="tx">Sara just ate at Padella<span>"pici cacio e pepe = life-changing 🍝" · verified</span></div>
+          <div class="tx">Sara just ate at Padella<span>"pici cacio e pepe = life-changing" · verified</span></div>
         </div>
       </div>
     </div>
@@ -742,11 +806,11 @@
       </details>
       <details>
         <summary>How does the cashback actually arrive?</summary>
-        <p>Via Faster Payments to your nominated current account. Usually within 30–60 seconds of you tapping at the till — often before pudding lands. Genuinely faster than splitting the bill.</p>
+        <p>Via Faster Payments to your nominated current account. Genuinely faster than splitting the bill.</p>
       </details>
       <details>
         <summary>What's a "drop" and when?</summary>
-        <p>Every Monday &amp; Friday at 9am, three personalised cashback offers land in your app. You pick one to redeem, trade it with a friend, or gift it to someone — before the next drop arrives. A deliberate ritual, not an infinite voucher feed of doom.</p>
+        <p>Every Monday &amp; Friday at 9am, personalised cashback offers land in your app. You pick the ones you want to redeem, trade it with a friend, or gift it to someone. Just make sure you use them before the next drop arrives. A deliberate ritual, not an infinite voucher feed of doom.</p>
       </details>
       <details>
         <summary>Can I really trade my Klaim with friends?</summary>
