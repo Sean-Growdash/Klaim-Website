@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Klaim · For diners — Get paid to eat out in London</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" />
+<style>
+  :root{
+    --ink:#2F196B;
+    --ink-deep:#1F0F4A;
+    --lime:#C7FF4F;
+    --lime-deep:#A8E837;
+    --cream:#F4EDE6;
+    --cream-2:#EDE5DC;
+    --pink:#FF6B9D;
+    --white:#FFFFFF;
+    --muted:rgba(47,25,107,.65);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1380px;margin:0 auto;padding:0 40px}
+  .display{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.04em;line-height:.92}
+  .hl{display:inline-block;background:var(--lime);color:var(--ink);padding:0 .15em;border-radius:14px}
+
+  /* NAV */
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(244,237,230,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(47,25,107,.08)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1380px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.04em}
+  .logo .mark{width:38px;height:38px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--lime);font-weight:800;font-size:20px}
+  .nav-links{display:flex;gap:32px;font-size:15px;font-weight:500;color:var(--ink)}
+  .nav-links a{opacity:.75;transition:opacity .15s}
+  .nav-links a:hover{opacity:1}
+  .pill-btn{padding:12px 22px;border-radius:999px;font-weight:600;font-size:14px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;transition:transform .15s}
+  .pill-btn.solid{background:var(--ink);color:var(--lime)}
+  .pill-btn.lime{background:var(--lime);color:var(--ink)}
+  .pill-btn:hover{transform:translateY(-2px)}
+  .pill-btn.lg{padding:18px 32px;font-size:16px}
+
+  /* HERO */
+  .hero{padding:60px 0 100px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--lime);color:var(--ink);border-radius:999px;font-size:13px;font-weight:600;border:1.5px solid var(--ink)}
+  h1.hero-title{margin-top:24px;font-size:clamp(64px,9.5vw,160px)}
+  .hero-sub{margin-top:32px;font-size:21px;line-height:1.45;max-width:580px;color:var(--muted);font-weight:500}
+  .hero-actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .hero-trust{margin-top:36px;display:flex;gap:14px;align-items:center;font-size:14px;color:var(--muted);font-weight:500}
+  .avatars{display:flex}
+  .avatars .av{width:34px;height:34px;border-radius:50%;border:2px solid var(--cream);margin-left:-10px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--white)}
+  .avatars .av:first-child{margin-left:0}
+
+  /* PHONE */
+  .phone-wrap{position:relative;display:flex;justify-content:center;align-items:center;min-height:680px}
+  .phone{width:340px;height:680px;background:var(--ink);border-radius:44px;padding:8px;position:relative;box-shadow:0 30px 80px -20px rgba(47,25,107,.4)}
+  .phone .notch{position:absolute;top:18px;left:50%;transform:translateX(-50%);width:110px;height:30px;background:#000;border-radius:18px;z-index:5}
+  .screen{width:100%;height:100%;background:var(--ink);border-radius:36px;overflow:hidden;position:relative;color:var(--cream)}
+  .sb{display:flex;justify-content:space-between;align-items:center;padding:16px 28px 0;font-size:13px;font-weight:600}
+  .app{padding:54px 18px 18px}
+  .app-h{display:flex;justify-content:space-between;align-items:flex-start}
+  .eye-mini{font-size:11px;color:var(--lime);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .app-title{font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:700;letter-spacing:-.03em;line-height:.95;margin-top:6px}
+  .app-title .lim{color:var(--lime)}
+  .countdown{margin-top:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);padding:8px 12px;border-radius:999px;font-size:11px;color:var(--cream)}
+  .countdown .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime)}
+  .countdown .v{font-weight:700;color:var(--lime)}
+  .drop-grid{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .drop{background:rgba(255,255,255,.05);border-radius:14px;padding:14px;position:relative;overflow:hidden;min-height:130px;display:flex;flex-direction:column;justify-content:space-between}
+  .drop.green{background:#0d3a1f}
+  .drop.red{background:#3d1018}
+  .drop.dark{background:#0f0a2e}
+  .drop .ico{font-size:28px}
+  .drop .name{font-weight:700;font-size:13px;margin-top:8px}
+  .drop .amt{font-size:11px;color:var(--lime);font-weight:600;margin-top:2px}
+  .drop .new{position:absolute;top:8px;right:8px;background:var(--lime);color:var(--ink);font-size:9px;font-weight:700;padding:3px 8px;border-radius:999px;letter-spacing:.04em}
+  .toast{margin-top:12px;background:rgba(199,255,79,.1);border:1px solid rgba(199,255,79,.3);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:center}
+  .toast .ic{font-size:20px}
+  .toast .tx{font-size:12px}
+  .toast .tx strong{color:var(--lime);display:block}
+  .toast .tx span{color:rgba(244,237,230,.6);font-size:11px}
+
+  /* === App screen recreation (mirrors Klaim app Drops home) === */
+  .phone .screen{background:var(--cream);color:var(--ink);display:flex;flex-direction:column}
+  .ph-sb{flex:none;display:flex;justify-content:space-between;align-items:center;padding:16px 26px 0;font-size:13px;font-weight:600;color:var(--ink)}
+  .ph-app{flex:1;display:flex;flex-direction:column;min-height:0;padding-top:30px}
+  .ph-head{padding:0 18px}
+  .ph-eye{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .ph-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.04em;font-size:30px;line-height:.9;margin-top:6px}
+  .ph-title .hl{background:var(--lime);color:var(--ink);padding:0 .1em;border-radius:6px}
+  .ph-cds{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+  .ph-cd{display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:var(--cream);padding:6px 11px;border-radius:999px;font-size:10.5px;font-weight:600}
+  .ph-cd.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .ph-cd .dot{width:5px;height:5px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px rgba(199,255,79,.2)}
+  .ph-cd b{color:var(--lime);font-weight:700}
+  .ph-cd.ghost b{color:var(--ink)}
+  .ph-secl{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:0 18px;margin-top:18px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+  .ph-secl .sub{letter-spacing:.02em;text-transform:none;font-weight:500;opacity:.7}
+  .ph-rail{display:flex;gap:10px;padding:0 18px 2px;overflow:hidden;align-items:flex-start}
+  .ph-card{flex:none;width:178px;border:1.5px solid var(--ink);border-radius:16px;background:var(--white);overflow:hidden;display:block}
+  .ph-card.ph-hero{width:198px;background:var(--lime)}
+  .ph-photo{position:relative;flex:none;height:80px;background:repeating-linear-gradient(135deg,rgba(47,25,107,.06) 0 8px,transparent 8px 16px),var(--cream-2);border-bottom:1.5px solid var(--ink)}
+  .ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .ph-tag{position:absolute;top:8px;left:8px;background:var(--ink);color:var(--lime);padding:4px 8px;border-radius:999px;font-size:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .ph-match{position:absolute;bottom:8px;right:8px;background:var(--cream);color:var(--ink);border:1.5px solid var(--ink);padding:3px 7px;border-radius:999px;font-size:8px;font-weight:700;display:flex;align-items:center;gap:5px}
+  .ph-match .dot{width:5px;height:5px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 2px var(--ink)}
+  .ph-cbody{padding:10px 12px 11px;display:flex;flex-direction:column;gap:7px}
+  .ph-ctop{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+  .ph-nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em;line-height:1.05}
+  .ph-meta{font-size:9.5px;color:var(--muted);font-weight:600;margin-top:2px}
+  .ph-card.ph-hero .ph-meta{color:rgba(47,25,107,.72)}
+  .ph-amt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.04em;line-height:.9;color:var(--ink);white-space:nowrap}
+  .ph-foot{display:flex;align-items:center;gap:6px;font-size:9.5px;font-weight:600;color:var(--muted);padding-top:5px;border-top:1px dashed rgba(47,25,107,.2)}
+  .ph-card.ph-hero .ph-foot{color:rgba(47,25,107,.72);border-top-color:rgba(47,25,107,.28)}
+  .ph-fdot{width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.5}
+  .ph-banner{margin:14px 18px 0;border:1.5px solid var(--ink);border-radius:14px;background:var(--lime);padding:11px 14px;font-size:11px;font-weight:600;line-height:1.3;color:var(--ink)}
+  .ph-banner b{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.02em;display:block;margin-bottom:1px}
+  .ph-search{display:flex;gap:8px;padding:0 18px;margin-top:16px}
+  .ph-input{flex:1;display:flex;align-items:center;gap:8px;padding:0 12px;height:40px;background:var(--white);border:1.5px solid var(--ink);border-radius:12px;font-size:11.5px;color:var(--muted);font-weight:500}
+  .ph-input .mag{width:14px;height:14px;border:1.5px solid var(--muted);border-radius:50%;position:relative;flex:none}
+  .ph-input .mag::after{content:"";position:absolute;width:6px;height:1.5px;background:var(--muted);bottom:-2px;right:-3px;transform:rotate(45deg);border-radius:2px}
+  .ph-filt{flex:none;width:40px;height:40px;border-radius:12px;background:var(--ink);color:var(--lime);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+  .ph-filt span{display:block;width:14px;height:1.5px;background:var(--lime);border-radius:2px}
+  .ph-filt span:nth-child(2){width:9px}
+  .ph-cuis{display:flex;gap:6px;padding:12px 18px 0;overflow:hidden}
+  .ph-chip{flex:none;padding:6px 12px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-size:11px;font-weight:600;white-space:nowrap}
+  .ph-chip.on{background:var(--ink);color:var(--cream)}
+  .ph-tabs{flex:none;margin-top:auto;background:var(--cream);border-top:1px solid rgba(47,25,107,.14);padding:8px 8px 16px;display:flex;justify-content:space-around;align-items:flex-end}
+  .ph-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--muted);font-size:8.5px;font-weight:700;letter-spacing:.02em}
+  .ph-tab .ic{width:38px;height:26px;border-radius:9px;display:flex;align-items:center;justify-content:center}
+  .ph-tab .ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .ph-tab.active{color:var(--ink)}
+  .ph-tab.active .ic{background:var(--lime)}
+  .ph-tab.active .ic svg{stroke:var(--ink)}
+
+  .float-card{position:absolute;background:var(--white);border:1.5px solid var(--ink);border-radius:16px;padding:14px 18px;display:flex;gap:12px;align-items:center;font-size:14px;box-shadow:0 12px 30px -12px rgba(47,25,107,.3);z-index:3}
+  .float-card .ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;background:var(--lime);border:1px solid var(--ink)}
+  .float-card strong{display:block;font-weight:700;color:var(--ink)}
+  .float-card span{display:block;font-size:11px;color:var(--muted);margin-top:1px}
+  .fc1{top:60px;right:-40px;animation:fl 7s ease-in-out infinite}
+  .fc2{bottom:160px;left:-50px;animation:fl 7s ease-in-out infinite reverse}
+  .fc2 .ic{background:var(--pink)}
+  .fc3{bottom:30px;right:-20px;animation:fl 8s ease-in-out infinite}
+  .fc3 .ic{background:var(--ink);color:var(--lime)}
+  @keyframes fl{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+
+  /* SECTIONS */
+  section{padding:88px 0}
+  .sec-cream-2{background:var(--cream-2)}
+  .sec-ink{background:var(--ink);color:var(--cream)}
+  .sec-lime{background:var(--lime);color:var(--ink)}
+
+  .sec-eye{display:inline-block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:20px;text-transform:uppercase;letter-spacing:.12em;padding:6px 12px;background:var(--cream);border:1.5px solid var(--ink);border-radius:999px}
+  .sec-cream-2 .sec-eye{background:var(--white)}
+  .sec-ink .sec-eye{color:var(--lime);background:transparent;border-color:var(--lime)}
+  .sec-head{display:grid;grid-template-columns:1.15fr .85fr;gap:36px 64px;align-items:end;margin-bottom:56px;padding-bottom:28px;border-bottom:1.5px solid var(--ink)}
+  .sec-ink .sec-head{border-bottom-color:rgba(244,237,230,.2)}
+  .sec-head h2{font-size:clamp(44px,5.6vw,92px);line-height:.95;margin-top:0}
+  .sec-head .lede{font-size:18px;line-height:1.55;color:var(--muted);max-width:480px;font-weight:500;justify-self:end;padding-bottom:12px}
+  .sec-ink .sec-head .lede{color:rgba(244,237,230,.75)}
+  @media (max-width:900px){.sec-head{grid-template-columns:1fr;gap:24px;padding-bottom:24px;margin-bottom:48px}.sec-head .lede{justify-self:start;max-width:none}}
+
+  /* HOW STEPS */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .step{background:var(--white);border:1.5px solid var(--ink);border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;gap:20px;min-height:340px;position:relative;transition:transform .2s}
+  .step:hover{transform:translateY(-4px)}
+  .step:nth-child(2){background:var(--lime)}
+  .step:nth-child(3){background:var(--ink);color:var(--cream)}
+  .step .num{font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;color:var(--muted);letter-spacing:.05em}
+  .step:nth-child(3) .num{color:rgba(244,237,230,.6)}
+  .step .ic{font-size:48px}
+  .step h3{font-family:'Bricolage Grotesque',sans-serif;font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1.05}
+  .step p{font-size:15px;line-height:1.55;font-weight:500}
+  .step:nth-child(3) p{color:rgba(244,237,230,.75)}
+
+  /* RECEIPTS */
+  .receipts-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .receipts-grid h2{font-size:clamp(44px,5.5vw,88px)}
+  .receipts-grid p{margin-top:24px;font-size:18px;line-height:1.5;max-width:480px;color:var(--muted);font-weight:500}
+  .receipts-grid ul{list-style:none;margin-top:32px;display:flex;flex-direction:column;gap:14px}
+  .receipts-grid li{display:flex;gap:14px;align-items:flex-start;font-size:15px;font-weight:500}
+  .receipts-grid li::before{content:"✓";color:var(--ink);font-weight:700;font-size:18px;background:var(--lime);width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
+  .stack{display:flex;flex-direction:column;gap:12px}
+  .receipt{background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:18px 22px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px}
+  .receipt .left{display:flex;align-items:center;gap:14px}
+  .receipt .ic{width:44px;height:44px;border-radius:12px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:22px;border:1px solid var(--ink)}
+  .receipt .nm{font-weight:700;font-size:16px}
+  .receipt .me{font-size:12px;color:var(--muted);margin-top:2px;font-weight:500}
+  .receipt .amt{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:28px;color:var(--ink);letter-spacing:-.02em}
+  .receipt .amt small{display:block;font-family:'Inter';font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-align:right;margin-top:2px}
+
+  /* SOCIAL FEATURES */
+  .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .feat{padding:40px;border-radius:24px;border:1.5px solid var(--ink);background:var(--cream);display:flex;flex-direction:column;gap:20px;min-height:380px;justify-content:space-between;transition:transform .2s}
+  .feat:hover{transform:translateY(-4px)}
+  .feat.lime{background:var(--lime)}
+  .feat.ink{background:var(--ink);color:var(--cream)}
+  .feat.ink h3,.feat.ink p{color:var(--cream)}
+  .feat .ic{font-size:36px;width:64px;height:64px;border-radius:16px;background:var(--white);display:flex;align-items:center;justify-content:center;border:1.5px solid var(--ink)}
+  .feat.ink .ic{background:var(--lime)}
+  .feat h3{font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:700;letter-spacing:-.03em;line-height:1.05}
+  .feat p{font-size:16px;line-height:1.5;font-weight:500;color:var(--muted)}
+  .feat.lime p{color:var(--ink-deep)}
+  .feat.ink p{color:rgba(244,237,230,.78)}
+
+  .feat-mock{margin-top:auto;padding:18px;background:var(--white);border-radius:14px;border:1px solid var(--ink);display:flex;align-items:center;gap:14px}
+  .feat.ink .feat-mock{background:rgba(255,255,255,.08);border-color:rgba(244,237,230,.15)}
+  .feat-mock .stack-av{display:flex}
+  .feat-mock .av{width:34px;height:34px;border-radius:50%;border:2px solid var(--white);margin-left:-10px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--white)}
+  .feat.ink .feat-mock .av{border-color:var(--ink)}
+  .feat-mock .av:first-child{margin-left:0}
+  .feat-mock .tx{font-size:13px;font-weight:600}
+  .feat-mock .tx span{display:block;font-size:11px;color:var(--muted);font-weight:500;margin-top:2px}
+  .feat.ink .feat-mock .tx span{color:rgba(244,237,230,.6)}
+
+  /* DROPS */
+  .drops-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .drop-card{background:var(--white);border:1.5px solid var(--ink);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:14px;min-height:240px;position:relative;transition:transform .2s}
+  .drop-card:hover{transform:translateY(-4px)}
+  .drop-card.lime{background:var(--lime)}
+  .drop-card .pic{width:100%;height:100px;border-radius:12px;background:var(--cream-2);display:flex;align-items:center;justify-content:center;font-size:40px;border:1px dashed var(--ink)}
+  .drop-card.lime .pic{background:var(--white)}
+  .drop-card .nm{font-weight:700;font-size:17px;letter-spacing:-.01em}
+  .drop-card .hood{font-size:12px;color:var(--muted);margin-top:2px;font-weight:500}
+  .drop-card .amt{font-family:'Bricolage Grotesque',sans-serif;font-size:34px;font-weight:700;letter-spacing:-.03em;color:var(--ink);margin-top:auto}
+  .drop-card .amt small{font-size:11px;color:var(--muted);display:block;font-family:'Inter';font-weight:600;margin-top:2px}
+  .drop-card .badge{position:absolute;top:14px;right:14px;background:var(--ink);color:var(--lime);font-size:10px;font-weight:700;padding:4px 9px;border-radius:999px;letter-spacing:.04em}
+
+  /* LONDON */
+  .london-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+  .london-grid h2{font-size:clamp(44px,6vw,96px)}
+  .london-grid p{margin-top:24px;font-size:19px;line-height:1.5;max-width:540px;color:rgba(244,237,230,.78);font-weight:500}
+  .hood-list{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(199,255,79,.2)}
+  .hood{padding:18px 8px;border-bottom:1px solid rgba(199,255,79,.2);display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600}
+  .hood .stat{font-size:11px;font-weight:700;letter-spacing:.04em}
+  .hood .stat.live{color:var(--lime)}
+  .hood .stat.soon{color:rgba(244,237,230,.5)}
+
+  .map{background:var(--ink-deep);border:1.5px solid var(--lime);border-radius:24px;padding:24px;aspect-ratio:1/1;position:relative;overflow:hidden;background-image:linear-gradient(rgba(199,255,79,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(199,255,79,.06) 1px,transparent 1px);background-size:40px 40px}
+  .map .pin{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 6px rgba(199,255,79,.2)}
+  .map .pin::after{content:attr(data-name);position:absolute;left:22px;top:-4px;font-size:12px;color:var(--cream);white-space:nowrap;font-weight:600}
+  .map .pin.soft{background:rgba(199,255,79,.4);box-shadow:none}
+  .map .label{position:absolute;bottom:18px;left:24px;font-size:11px;color:rgba(244,237,230,.7);font-weight:500}
+
+  /* QUOTES */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .quote{padding:36px 30px;border-radius:24px;border:1.5px solid var(--ink);background:var(--white);display:flex;flex-direction:column;gap:24px;min-height:340px;justify-content:space-between;transition:transform .2s}
+  .quote:hover{transform:translateY(-4px)}
+  .quote:nth-child(2){background:var(--lime)}
+  .quote .stars{font-size:16px;color:var(--ink);letter-spacing:.1em}
+  .quote q{display:block;font-size:19px;line-height:1.4;font-weight:500;quotes:"\201C" "\201D"}
+  .quote .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--ink);padding-top:20px}
+  .quote .who .av{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--lime);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+  .quote .who .nm{font-weight:700;font-size:14px}
+  .quote .who .me{font-size:12px;color:var(--muted);font-weight:500}
+
+  /* PRIVACY */
+  .priv-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center}
+  .priv-grid h2{font-size:clamp(44px,6vw,92px)}
+  .priv-grid h2 .hl{background:var(--lime);color:var(--ink)}
+  .priv-grid .lede{margin-top:24px;font-size:18px;line-height:1.5;max-width:480px;color:rgba(244,237,230,.78);font-weight:500}
+  .priv-card{background:var(--lime);color:var(--ink);border:1.5px solid var(--ink);border-radius:28px;padding:48px}
+  .priv-card .seal{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:var(--ink);color:var(--lime);font-size:12px;font-weight:600}
+  .priv-card .seal::before{content:"🔒"}
+  .priv-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:36px;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-top:20px}
+  .priv-card ul{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:14px}
+  .priv-card li{font-size:15px;display:flex;gap:12px;align-items:flex-start;font-weight:500}
+  .priv-card li::before{content:"✓";color:var(--lime);font-weight:700;background:var(--ink);width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px}
+
+  /* FAQ */
+  .faq-list{display:flex;flex-direction:column;border-top:1.5px solid var(--ink)}
+  details{border-bottom:1.5px solid var(--ink);padding:28px 0;cursor:pointer}
+  details summary{display:flex;justify-content:space-between;align-items:center;list-style:none;font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.3;gap:24px}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:32px;font-weight:600;color:var(--ink);background:var(--lime);width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;line-height:0;border:1.5px solid var(--ink);transition:transform .2s;flex-shrink:0}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:18px;font-size:17px;line-height:1.55;max-width:780px;color:var(--muted);font-weight:500}
+
+  /* FINAL CTA */
+  .final{background:var(--ink);color:var(--cream);text-align:center;padding:160px 0;position:relative;overflow:hidden}
+  .final h2{font-size:clamp(72px,12vw,200px);text-wrap:balance}
+  .final h2 .hl{background:var(--lime);color:var(--ink)}
+  .final p{margin-top:32px;font-size:21px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.45;color:rgba(244,237,230,.78);font-weight:500}
+  .final .actions{margin-top:48px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .final .pill-btn{border-color:var(--cream);color:var(--cream)}
+  .final .pill-btn.lime{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+  .final small{display:block;margin-top:32px;font-size:13px;color:rgba(244,237,230,.6);font-weight:500}
+
+  /* FOOTER */
+  footer{background:var(--ink-deep);color:var(--cream);padding:80px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+  .foot-grid h4{font-size:13px;font-weight:700;color:var(--lime);margin-bottom:18px;letter-spacing:.04em;text-transform:uppercase}
+  .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px;color:rgba(244,237,230,.7);font-weight:500}
+  .foot-bot{border-top:1px solid rgba(244,237,230,.1);padding-top:32px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(244,237,230,.5)}
+
+  @media (max-width:1100px){
+    .hero-grid,.receipts-grid,.london-grid,.priv-grid{grid-template-columns:1fr}
+    .steps,.drops-grid,.quotes,.feat-grid{grid-template-columns:1fr 1fr}
+    .nav-links{display:none}
+    /* sec-head handled by 900px MQ above */
+  }
+  @media (max-width:680px){
+    .container{padding:0 24px}
+    .steps,.drops-grid,.quotes,.feat-grid,.foot-grid,.hood-list{grid-template-columns:1fr}
+    h1.hero-title{font-size:64px}
+  }
+</style>
+</head>
+<body data-screen-label="Diners">
+
+<nav class="top">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="mark">K</span> Klaim · for diners</a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#social">Drop Buddies</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div style="display:flex;gap:10px">
+      <a href="restaurants.html" class="pill-btn">For restaurants</a>
+      <a href="#download" class="pill-btn solid">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">🇬🇧 Now live in London · invite-only</span>
+        <h1 class="hero-title display">Get paid<br/>to eat <span class="hl">out.</span></h1>
+        <p class="hero-sub">Twice-weekly cashback drops to the best spots in Soho, Shoreditch, Borough &amp; beyond — every Monday and Friday at 9am. Zero codes. Zero coupons. Just tap the card you already use and we'll fire the cash to your bank before pudding lands.</p>
+        <div class="hero-actions">
+          <a href="#download" class="pill-btn lime lg">Put me on the list →</a>
+          <a href="#how" class="pill-btn lg">See how it works</a>
+        </div>
+        <div class="hero-trust">
+          <div class="avatars">
+            <div class="av" style="background:#FF6B9D">SR</div>
+            <div class="av" style="background:#C7FF4F;color:var(--ink)">FA</div>
+            <div class="av" style="background:#7DD3FC;color:var(--ink)">MK</div>
+            <div class="av" style="background:#F59E0B;color:var(--ink)">AH</div>
+            <div class="av" style="background:var(--ink)">+</div>
+          </div>
+          <div><strong style="color:var(--ink)">2,400+ Klaimers</strong> already on the list in London. Friday's drop hits in 4d 22h 00m.</div>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="screen">
+            <div class="ph-sb"><span>9:41</span><span>●●● 100%</span></div>
+            <div class="ph-app">
+              <div class="ph-head">
+                <div class="ph-eye">Friday · Drops</div>
+                <div class="ph-title">45 spots, one good <span class="hl">weekend.</span></div>
+                <div class="ph-cds">
+                  <span class="ph-cd"><span class="dot"></span>Closes in <b>2d 14h 22m</b></span>
+                  <span class="ph-cd ghost"><b>45</b> live near you</span>
+                </div>
+              </div>
+
+              <div class="ph-secl">
+                <span>✦ Curated for you</span>
+                <span class="sub">Last 30 days</span>
+              </div>
+              <div class="ph-rail">
+                <div class="ph-card ph-hero">
+                  <div class="ph-photo">
+                    <img class="ph-img" crossorigin="anonymous" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="" />
+                    <div class="ph-tag">Top pick</div>
+                    <div class="ph-match"><span class="dot"></span>96% match</div>
+                  </div>
+                  <div class="ph-cbody">
+                    <div class="ph-ctop">
+                      <div>
+                        <div class="ph-nm">Dishoom</div>
+                        <div class="ph-meta">Shoreditch · Indian · ££</div>
+                      </div>
+                      <div class="ph-amt">+£18</div>
+                    </div>
+                    <div class="ph-foot">
+                      <span>★ 4.7</span><span class="ph-fdot"></span>
+                      <span>0.6 mi</span><span class="ph-fdot"></span>
+                      <span>min £35</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ph-card">
+                  <div class="ph-photo">
+                    <img class="ph-img" crossorigin="anonymous" src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="" />
+                    <div class="ph-tag">Walk-in</div>
+                    <div class="ph-match"><span class="dot"></span>92%</div>
+                  </div>
+                  <div class="ph-cbody">
+                    <div class="ph-ctop">
+                      <div>
+                        <div class="ph-nm">Padella</div>
+                        <div class="ph-meta">Borough · Italian · ££</div>
+                      </div>
+                      <div class="ph-amt">+£12</div>
+                    </div>
+                    <div class="ph-foot">
+                      <span>★ 4.6</span><span class="ph-fdot"></span>
+                      <span>1.2 mi</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ph-banner">
+                <b>£6 from your weekly £40 streak.</b>
+                One more drop locks an extra £5 bonus.
+              </div>
+
+              <div class="ph-search">
+                <div class="ph-input"><span class="mag"></span>Search restaurants, cuisines…</div>
+                <div class="ph-filt"><span></span><span></span></div>
+              </div>
+              <div class="ph-cuis">
+                <span class="ph-chip on">All</span>
+                <span class="ph-chip">Italian</span>
+                <span class="ph-chip">Japanese</span>
+                <span class="ph-chip">Indian</span>
+              </div>
+
+              <div class="ph-tabs">
+                <div class="ph-tab active">
+                  <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6.5 5 9.5a5 5 0 0 1-10 0C7 9.5 9 7 12 3Z"/></svg></div>
+                  Drops
+                </div>
+                <div class="ph-tab">
+                  <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18"/></svg></div>
+                  Klaims
+                </div>
+                <div class="ph-tab">
+                  <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></div>
+                  Trade
+                </div>
+                <div class="ph-tab">
+                  <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 7a3 3 0 0 1 0 6M21 19a5.5 5.5 0 0 0-3-5"/></svg></div>
+                  Buddies
+                </div>
+                <div class="ph-tab">
+                  <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></div>
+                  You
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-card fc1">
+          <div class="ic">💸</div>
+          <div><strong>+£32 back</strong><span>St. JOHN · 43s ago</span></div>
+        </div>
+        <div class="float-card fc2">
+          <div class="ic">🎉</div>
+          <div><strong>Trade accepted!</strong><span>With Fatima A.</span></div>
+        </div>
+        <div class="float-card fc3">
+          <div class="ic">👥</div>
+          <div><strong>Drop Buddies</strong><span>3 friends going</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="how" class="sec-cream-2">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">Simple as it gets</div>
+        <h2 class="display">Three steps to <span class="hl">free food.</span></h2>
+      </div>
+      <p class="lede">No QR codes. No voucher codes. No "do you have the app?" energy. Just your card, a great meal, and cash back in your bank — usually before the bill lands.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <div class="ic">📱</div>
+        <h3>Unwrap each drop</h3>
+        <p>Every Monday and Friday at 9am, three personalised rewards land in your app — restaurants matched to your taste, hand-picked across London, never the chains.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <div class="ic">💳</div>
+        <h3>Pay with your card</h3>
+        <p>Walk in, sit down, eat the bacon naan, pay with your linked card. Nothing to scan, nothing to mention. The bill is the bill — we handle the rest in the background.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <div class="ic">💸</div>
+        <h3>Cash in your bank</h3>
+        <p>Within minutes of paying, the cashback lands in your nominated UK current account — Monzo, Starling, Barclays, whoever. Faster Payments. Real money. Spendable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="receipts-grid">
+      <div>
+        <div class="sec-eye">Real money btw</div>
+        <h2 class="display">Not points. Not <span class="hl">vouchers.</span> Just money.</h2>
+        <p>Most "rewards" apps give you a coupon code you'll forget to use, or 47 points worth £0.13. Klaim sends actual pounds to the actual bank account you actually use. Spendable. Withdrawable. Yours. Weird, right?</p>
+        <ul>
+          <li>Faster Payments to any UK bank — usually 30–60 seconds</li>
+          <li>Up to £50 back per drop, no minimum spend, no asterisks</li>
+          <li>Free forever for diners — restaurants foot the bill</li>
+          <li>No expiry, no fine print, no "oh wait actually…"</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <div class="receipt">
+          <div class="left">
+            <div class="ic">🍛</div>
+            <div><div class="nm">Dishoom Shoreditch</div><div class="me">Fri 19:42 · bacon naan</div></div>
+          </div>
+          <div class="amt">+£24.00<small>→ Monzo</small></div>
+        </div>
+        <div class="receipt">
+          <div class="left">
+            <div class="ic">🍝</div>
+            <div><div class="nm">Padella</div><div class="me">Mon 13:08 · pici cacio</div></div>
+          </div>
+          <div class="amt">+£12.50<small>→ Starling</small></div>
+        </div>
+        <div class="receipt">
+          <div class="left">
+            <div class="ic">☕</div>
+            <div><div class="nm">Monmouth Coffee</div><div class="me">Fri 08:14 · flat white</div></div>
+          </div>
+          <div class="amt">+£3.80<small>→ Barclays</small></div>
+        </div>
+        <div class="receipt">
+          <div class="left">
+            <div class="ic">🍞</div>
+            <div><div class="nm">St. JOHN</div><div class="me">Mon 20:11 · bone marrow</div></div>
+          </div>
+          <div class="amt">+£32.00<small>→ Monzo</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="social" class="sec-cream-2">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">More than cashback</div>
+        <h2 class="display">Rewards are better with <span class="hl">friends.</span></h2>
+      </div>
+      <p class="lede">Klaim is the only rewards app built around social connection. Coordinate the same drop, trade ones you don't want, gift one to a mate — and see what your friends are actually eating, verified by their card.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat lime">
+        <div class="ic">👥</div>
+        <div>
+          <h3>Drop Buddies</h3>
+          <p>Spot the same restaurant in your friend's drop and lock it in together. Coordinate the visit, split the table, eat as a crew. The new running club, but with bone marrow.</p>
+        </div>
+        <div class="feat-mock" style="background:var(--white);border-color:var(--ink)">
+          <div class="stack-av">
+            <div class="av" style="background:#FF6B9D">SA</div>
+            <div class="av" style="background:#7DD3FC;color:var(--ink)">FA</div>
+            <div class="av" style="background:#F59E0B;color:var(--ink)">MK</div>
+          </div>
+          <div class="tx">3 friends going to St. JOHN<span>Friday · 19:30 · table for 4</span></div>
+        </div>
+      </div>
+      <div class="feat ink">
+        <div class="ic">🔄</div>
+        <div>
+          <h3>Trade your Klaim</h3>
+          <p>Got a sushi drop but craving curry? Offer a trade with any friend in London. They accept, you swap, instantly. No codes change hands, no awkward Venmo moments.</p>
+        </div>
+        <div class="feat-mock">
+          <div class="ic" style="width:36px;height:36px;font-size:18px;background:var(--lime)">🎉</div>
+          <div class="tx" style="color:var(--cream)">Trade accepted with Fatima A.<span>You got: Pizzeria Mozza · she got: Boba Lab</span></div>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="ic">🎁</div>
+        <div>
+          <h3>Gift a Klaim</h3>
+          <p>Send a friend their first cashback at a spot you love. They redeem it, you both get hyped about the place. Cheaper than buying them dinner, way more personal than a Pret giftcard.</p>
+        </div>
+        <div class="feat-mock">
+          <div class="ic" style="width:36px;height:36px;font-size:18px;background:var(--pink)">💝</div>
+          <div class="tx">"Try this — it's unreal" → Aisha<span>Gift sent · St. JOHN · £32 back</span></div>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="ic">📰</div>
+        <div>
+          <h3>Verified social feed</h3>
+          <p>See what your friends actually ate this week — verified by their card, not by a vibes-based Instagram caption. The first social feed where every recommendation comes with a real receipt behind it.</p>
+        </div>
+        <div class="feat-mock">
+          <div class="stack-av">
+            <div class="av" style="background:#7DD3FC;color:var(--ink)">SA</div>
+          </div>
+          <div class="tx">Sara just ate at Padella<span>"pici cacio e pepe = life-changing 🍝" · verified</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">Friday's drop</div>
+        <h2 class="display">This week's <span class="hl">menu.</span></h2>
+      </div>
+      <p class="lede">02 May 2026, 09:00 BST. Three spots, one good Friday. We don't list every chain in London — only places we'd actually go on a Friday with our last £20 before payday. (The cashback hits before payday btw.)</p>
+    </div>
+    <div class="drops-grid">
+      <div class="drop-card lime">
+        <span class="badge">★ FEATURED</span>
+        <div class="pic">🍞</div>
+        <div>
+          <div class="nm">St. JOHN Bread &amp; Wine</div>
+          <div class="hood">Spitalfields · British</div>
+        </div>
+        <div class="amt">£32<small>cashback</small></div>
+      </div>
+      <div class="drop-card">
+        <div class="pic">🍛</div>
+        <div>
+          <div class="nm">Dishoom</div>
+          <div class="hood">Shoreditch · Indian</div>
+        </div>
+        <div class="amt">£24<small>cashback</small></div>
+      </div>
+      <div class="drop-card">
+        <div class="pic">🍝</div>
+        <div>
+          <div class="nm">Padella</div>
+          <div class="hood">Borough · Italian</div>
+        </div>
+        <div class="amt">£12.50<small>cashback</small></div>
+      </div>
+      <div class="drop-card">
+        <div class="pic">☕</div>
+        <div>
+          <div class="nm">Monmouth Coffee</div>
+          <div class="hood">Borough · Coffee</div>
+        </div>
+        <div class="amt">£8<small>cashback</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">Real Klaimers</div>
+        <h2 class="display">Loved across <span class="hl">London.</span></h2>
+      </div>
+      <p class="lede">What our first 2,400 Londoners told us after a month on the app. (We did not pay them. We did pay them cashback though.)</p>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <q>Walked past Padella for two years going "too busy". £12.50 in my Monzo on a Tuesday was all the push I needed. Pici cacio e pepe = genuinely life-changing.</q>
+        <div class="who">
+          <div class="av">SR</div>
+          <div><div class="nm">Sara R.</div><div class="me">Borough · Klaimer since Feb</div></div>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <q>Drop Buddies feature is genius. Every Monday and Friday me and three colleagues all check at 9am sharp and lock the same place. We have stopped doing Pret lunches. Revolutionary.</q>
+        <div class="who">
+          <div class="av">MK</div>
+          <div><div class="nm">Matt K.</div><div class="me">Fitzrovia · Designer</div></div>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <q>Convinced there'd be a catch. Genuinely there isn't. £127 cashback last month, didn't change a single thing about how I eat. I feel like I'm cheating.</q>
+        <div class="who">
+          <div class="av">AH</div>
+          <div><div class="nm">Aisha H.</div><div class="me">Marylebone · Engineer</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-ink">
+  <div class="container">
+    <div class="priv-grid">
+      <div>
+        <div class="sec-eye" style="color:var(--lime)">🔒 Privacy first</div>
+        <h2 class="display">Your bank stays your <span class="hl">bank.</span></h2>
+        <p class="lede">We connect via FCA-regulated Open Banking — the exact same plumbing your bank's own app uses. Klaim never sees your card number, sort code, or login. We just see "did the transaction happen?" and send you cash if yes.</p>
+      </div>
+      <div class="priv-card">
+        <span class="seal">FCA regulated · Open Banking</span>
+        <h3>The deal, in plain English.</h3>
+        <ul>
+          <li>We never see your card number, PIN, or login</li>
+          <li>Read-only — we cannot move money out of your account</li>
+          <li>Revoke access from your bank app any time</li>
+          <li>We don't sell your data, ever — that's not the business</li>
+          <li>Your eating habits aren't shared with anyone, full stop</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">Got questions?</div>
+        <h2 class="display">Everything you need to <span class="hl">know.</span></h2>
+      </div>
+      <p class="lede">The questions everyone asks the first time they hear there's a thing that pays you back to do something you were going to do anyway.</p>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>What's the catch?</summary>
+        <p>None for diners. Klaim is free, the cashback comes from the restaurant — they pay us a small fee for every diner we send through the door. Same logic as a Google ad, except instead of Google taking the budget, you do.</p>
+      </details>
+      <details>
+        <summary>Which UK banks work?</summary>
+        <p>All the big ones — Monzo, Starling, Revolut, Barclays, HSBC, NatWest, Lloyds, Halifax, Santander, Nationwide, First Direct, Chase UK, the lot. American Express support is coming Q3 2026.</p>
+      </details>
+      <details>
+        <summary>How does the cashback actually arrive?</summary>
+        <p>Via Faster Payments to your nominated current account. Usually within 30–60 seconds of you tapping at the till — often before pudding lands. Genuinely faster than splitting the bill.</p>
+      </details>
+      <details>
+        <summary>What's a "drop" and when?</summary>
+        <p>Every Monday &amp; Friday at 9am, three personalised cashback offers land in your app. You pick one to redeem, trade it with a friend, or gift it to someone — before the next drop arrives. A deliberate ritual, not an infinite voucher feed of doom.</p>
+      </details>
+      <details>
+        <summary>Can I really trade my Klaim with friends?</summary>
+        <p>Yes — one of our most-loved features. If you receive a drop you don't want, offer a trade with any friend in London. They accept or decline; if accepted, your Klaims swap instantly. You can also gift one outright to a friend.</p>
+      </details>
+      <details>
+        <summary>Where in London does it work?</summary>
+        <p>Soho, Shoreditch, Borough, Marylebone, Hackney and Bermondsey are live now. Peckham &amp; Notting Hill arrive in May. Heading for full Zone 1–3 coverage by year end.</p>
+      </details>
+      <details>
+        <summary>Does it work outside London?</summary>
+        <p>Not yet — going deep on London first. Manchester, Bristol &amp; Edinburgh are on the 2027 roadmap. Add yourself and we'll text the second your city opens.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="final">
+  <div class="container">
+    <div class="sec-eye" style="color:var(--lime);font-size:13px;letter-spacing:.04em;text-transform:uppercase">Free forever for diners</div>
+    <h2 class="display" style="margin-top:18px">Eat. Tap.<br/>Get <span class="hl">paid.</span></h2>
+    <p>2,400 Londoners are already on the list. We're letting people in neighbourhood by neighbourhood. Don't be the last person at the table without it.</p>
+    <div class="actions">
+      <button class="pill-btn lime lg" onclick="alert('design placeholder')">Get the app →</button>
+      <button class="pill-btn lg" onclick="alert('coming Q3 2026')">Android · Q3 2026</button>
+    </div>
+    <small>Free for diners, forever · GBP cashback · Zones 1–2 live</small>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:18px;color:var(--cream)"><span class="mark">K</span> Klaim</div>
+        <p style="color:rgba(244,237,230,.6);font-size:14px;line-height:1.5;max-width:320px">Twice-weekly cashback drops to the best places to eat in London. Get paid to go there.</p>
+      </div>
+      <div>
+        <h4>For diners</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#social">Drop Buddies</a></li>
+          <li><a href="#london">London coverage</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>For restaurants</h4>
+        <ul>
+          <li><a href="restaurants.html">The pitch</a></li>
+          <li><a href="restaurants.html#roi">ROI calculator</a></li>
+          <li><a href="restaurants.html#book">Book a demo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">User T&amp;Cs</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div>© 2026 Klaim Ltd · Registered in England</div>
+      <div>London · UK</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

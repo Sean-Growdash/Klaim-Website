@@ -1,0 +1,423 @@
+Klaim UK: Pre-Seed Strategy &
+Commercial Model
+Prepared for: Sean Trevaskis & Co-Founders Date: May 2026
+1. Executive Summary
+Klaim is the UK’s first performance-based restaurant discovery app, built entirely on
+open banking infrastructure. It solves a fundamental inefficiency in the £101 billion UK
+eating out market [1]: restaurants spend over £3 billion annually on social media
+marketing without any ability to track return on investment (ROI) to physical visits [2].
+Simultaneously, Gen Z consumers are dining out more frequently but are fatigued by
+traditional points-based loyalty schemes and discount vouchers that carry social stigma
+[3].
+By leveraging the UK’s mature open banking ecosystem (which reached 16.5 million
+users by late 2025 [4]), Klaim connects the digital impression directly to the physical
+transaction. Restaurants only pay when a verified customer walks through the door and
+pays with their linked card. Consumers receive real cash directly into their bank
+accounts.
+This strategy paper outlines the commercial model, unit economics, market positioning,
+competitive landscape, SWOT analysis, and a detailed 3-year financial and fundraising
+roadmap to support a £750K pre-seed raise.
+2. The Problem & Solution
+The Restaurant Problem: The Attribution Black Hole
+In 2026, 84% of UK restaurant operators allocate the majority of their marketing budget
+to social media [2]. However, there is zero native attribution from an Instagram or TikTok
+impression to a physical restaurant visit. Restaurants are effectively flying blind,
+
+-- 1 of 12 --
+
+spending an average of £30 to £80 to acquire a single customer without knowing which
+campaigns actually drove footfall.
+Furthermore, traditional discount apps (such as Tastecard or Groupon) are actively
+avoided by premium and mid-market restaurants. Academic research confirms that
+voucher use adversely affects brand perception and long-term loyalty [5]. These
+platforms also require complex point-of-sale (POS) integrations and create friction for
+staff at checkout.
+The Consumer Problem: Broken Discovery and Fake Rewards
+Gen Z’s relationship with dining out is fundamentally different from previous
+generations. In 2026, 34% of UK consumers dine out three or more times per month,
+with Gen Z frequency rising rapidly [2]. While 73% of Gen Z use social media to find
+restaurants, the algorithms often trap them in echo chambers, showing the same viral
+spots repeatedly [6].
+When it comes to rewards, this demographic rejects traditional loyalty. Points expire,
+vouchers are awkward to present at checkout, and loyalty stamps feel like a chore. They
+demand instant, transparent, real-money rewards. Furthermore, dining is inherently
+social, yet existing rewards apps are entirely solo experiences with no mechanism to
+coordinate with friends or share discoveries.
+The Klaim Solution
+Klaim solves both sides of the marketplace through a card-linked, gamified “drop”
+mechanic:
+1. Unwrap the Drop: Every Monday and Friday, users receive personalised cashback
+offers to curated restaurants.
+2. Pay Normally: Users visit the restaurant and pay with their linked bank card. There
+are no QR codes, no vouchers, and no staff interaction required.
+3. Instant Cash: Open banking detects the transaction, and the cashback is
+transferred directly to the user’s bank account within minutes.
+For restaurants, Klaim is a zero-risk acquisition channel requiring no POS integration. For
+consumers, it is a frictionless way to discover new venues and earn real cash.
+
+-- 2 of 12 --
+
+3. Market Sizing & Dynamics (2026)
+The UK eating out market is projected to reach £101 billion by the end of 2026 [1]. Within
+this, the full-service restaurant sector is valued at approximately £35.7 billion [7].
+Klaim’s initial focus is exclusively on London, which represents the most concentrated
+and lucrative segment of the UK market. London generates 22.6% of all UK hospitality
+revenue and boasts an average spend per visit that is 32% higher than the national
+average [8]. With over 11,400 restaurants, London provides the necessary density to
+build a two-sided marketplace [9].
+The timing for Klaim is optimal due to three converging tailwinds in 2026:
+1. Open Banking Maturity: The UK is the global leader in open banking, with 41% of
+adults already using the technology [4]. The infrastructure for frictionless card-
+linking is now mainstream.
+2. Gen Z Dining Habits: The target demographic is dining out more frequently and
+relying heavily on digital discovery, yet they are actively rejecting traditional brand
+loyalty programs in favour of tangible value [3].
+3. Model Validation: The identical business model was proven at scale in the United
+States by claim.co, which was acquired by Wonder Group (Grubhub’s parent
+company) in 2025 [10]. The UK currently has no direct equivalent combining real
+cash, gamification, and social features.
+4. Competitive Landscape
+The UK market contains several players in the cashback and loyalty space, but none
+occupy Klaim’s specific positioning.
+
+-- 3 of 12 --
+
+Platform Reward
+Type
+POS
+Integration
+Required?
+Gamification Social
+Features
+London
+Focus
+Performance-
+Based B2B
+Klaim Real
+Cash No 	Yes 	Yes 	Yes 	Yes
+Shuffle Real
+Cash No 	Partial 	No
+No
+(North
+UK)
+No
+JamDoughnut Real
+Cash No 	No 	No 	Yes 	No
+Tastecard 	Discount Yes 	No 	No 	Yes 	No
+Yonder 	Points 	No 	No 	No 	Yes 	No
+Table 1: Competitive Matrix (2026)
+Shuffle Rewards is the closest structural competitor, offering card-linked cashback
+without POS integration. However, Shuffle operates primarily in Northern cities
+(Manchester, Liverpool) and lacks the gamified “drop” mechanic and social features
+(Drop Buddies, trading) that drive habitual engagement. Tastecard and Groupon rely on
+a fundamentally flawed discount model that damages restaurant brand equity.
+5. Commercial Model & Unit Economics
+The Transaction Fee Deduction Strategy
+A critical strategic question is whether deducting Klaim’s processing fee from the user’s
+cashback will cause friction. The solution is entirely dependent on framing.
+Klaim must display the net-to-user figure in the app from the outset. If the restaurant
+funds £8.00 and the API processing cost is £0.46, the app should simply display “£7.50
+cash to your bank.” The user sees a clean number, receives exactly that amount, and
+experiences no negative surprise. The API cost is an internal cost of revenue, similar to
+how Monzo handles interchange fees invisibly to the consumer.
+
+-- 4 of 12 --
+
+Open Banking API Costs (2026 Rates)
+Deep research into UK open banking providers reveals the following unit costs [11] [12]:
+Account Information (AIS): GoCardless Bank Account Data (formerly Nordigen)
+offers a free tier for early-stage startups, transitioning to ~£0.10-0.15 per call at
+scale. TrueLayer charges ~£0.10-0.20 per connection.
+Payment Initiation / VRP (Payouts): GoCardless charges 1% + 20p per transaction
+on standard plans. For an £8 payout, this equals £0.28.
+Identity Verification: Bank-native name matching via TrueLayer AIS is sufficient
+for KYC, avoiding the need for expensive third-party checks (e.g., Onfido at £1-3 per
+check).
+Total Estimated API Cost per Transaction: £0.46.
+Unit Economics
+Restaurant Pays: £8.00 (Cashback) + £1.50 (Klaim Platform Fee) = £9.50
+API Processing Cost: (£0.46)
+Net Cashback to User: (£7.50)
+Klaim Net Revenue: £1.04 per transaction
+Gross Margin: 69.3%
+At £9.50, the restaurant’s Customer Acquisition Cost (CAC) via Klaim is dramatically lower
+than the £30-£80 they currently spend on social media, and they only pay for verified
+visits.
+Revenue Streams
+1. Transaction Platform Fee (Core): £1.50 per verified transaction (rising to £2.00 at
+scale).
+2. Analytics Subscription (SaaS): A tiered monthly subscription billed per brand
+(averaging 10 locations per brand), offering deep insights into cohort analysis,
+repeat rates, and competitor benchmarking across all their venues. Pricing is
+£299/month (Insights) to £599/month (Pro), creating a highly compelling single-bill
+proposition for multi-site operators.
+
+-- 5 of 12 --
+
+3. Sponsored Drops (Year 2+): Premium placement fees (£500-£2,000) for new
+restaurant openings or specific campaigns.
+4. Data Products (Year 3+): Anonymised dining intelligence sold to commercial
+property firms and FMCG brands.
+6. Financial Projections (2026‒2028)
+The financial model has been built on the premise that the core technology is already
+developed. The founders will take zero salary for the first six months, allowing the £750K
+pre-seed capital to be aggressively deployed toward user and restaurant acquisition.
+Metric 	Year 1 (2026) 	Year 2 (2027) 	Year 3 (2028)
+Total Revenue 	£109K 	£692K 	£4.89M
+Gross Profit 	£82K 	£528K 	£3.95M
+Gross Margin % 	74.8% 	76.3% 	80.9%
+Total OPEX 	(£604K) 	(£1.66M) 	(£2.75M)
+EBITDA 	(£522K) 	(£1.13M) 	£1.20M
+Active Users (EoY) 	8,200 	61,200 	238,200
+Restaurant Venues 	480 	1,100 	3,300
+Restaurant Brands 	48 	110 	330
+Table 2: 3-Year P&L Summary
+
+-- 6 of 12 --
+
+7. Team & Organisational Structure (Year 1)
+To execute the London launch efficiently, Klaim will operate with a highly lean, operator-
+first team. The headcount is strictly capped at 8 full-time employees in Year 1. The
+founders will take zero salary for the first six months to ensure maximum capital is
+deployed toward user and restaurant acquisition.
+
+-- 7 of 12 --
+
+Year 1 Org Chart & Responsibilities
+Role 	Person Start
+Month Core Responsibilities 	Key Metrics Owned
+Co-Founder &
+CEO
+Sean
+Trevaskis
+Month
+1
+Strategy, fundraising,
+investor relations, press
+Restaurant brands
+signed, MRR, runway
+management
+Co-Founder &
+CCO
+[Name
+TBC]
+Month
+1
+Financial management,
+restaurant & user
+acquisition strategy
+Revenue, gross
+margin, user CAC,
+cash position
+Founding
+Engineer
+External
+Hire
+(Turkey)
+Month
+1
+Open banking
+integrations, app
+performance, merchant
+portal
+App uptime,
+transaction detection
+accuracy, API costs
+Growth &
+Marketing Lead
+External
+Hire
+Month
+2
+Performance marketing,
+social content, influencer
+management
+User CAC by channel,
+MAU growth, ROAS
+Head of
+Partnerships
+External
+Hire
+Month
+2
+B2B restaurant sales,
+brand onboarding,
+account management
+Brands signed, time-
+to-first-drop, partner
+retention
+Partnership
+Executive
+External
+Hire
+Month
+3
+Junior B2B sales support,
+restaurant outreach,
+onboarding
+Pipeline velocity,
+onboarding time,
+partner satisfaction
+Data & Product
+Analyst
+External
+Hire
+Month
+4
+Transaction data analysis,
+merchant analytics
+dashboard
+Analytics subscription
+adoption, data
+quality
+Community &
+Ops Manager
+External
+Hire
+Month
+6
+User support, community
+management (Drop
+Buddies)
+User NPS, support
+ticket resolution time
+Note: The core team is supported by a CTO Advisor ($2,500/month + 2-year ESOP vesting
+schedule), a social media agency for Months 1-3 only (£8K/month) to set initial strategy
+before bringing it in-house, part-time legal counsel, and a part-time accountant.
+
+-- 8 of 12 --
+
+Founder Compensation & Capital Discipline
+To ensure maximum capital is deployed toward user and restaurant acquisition, the
+founders will take £0 salary for the first three months. From Month 4, founder salaries
+are set at £65,000 per year. This aligns with SeedLegals 2025 benchmark data for UK pre-
+seed rounds of £700K+, which shows typical founder salaries between £60K and £80K
+[15]. This demonstrates capital discipline while ensuring the founders can sustain
+themselves in London.
+Legal & Compliance Efficiency
+By launching under TrueLayer’s FCA licence as a Third Party Provider (TPP), Klaim avoids
+the significant cost and 6-9 month delay of direct FCA authorisation. Legal and
+compliance costs are strictly limited to essential user-facing Terms & Conditions, GDPR
+privacy policies, restaurant partner agreements, and ongoing Appointed Representative
+(AR) monitoring. This lean approach keeps Year 1 legal costs under £15,000.
+Year 2 & 3 Scaling
+As the business scales, headcount will grow to 13 in Year 2 and 20 in Year 3. Key additions
+include:
+Year 2: Backend Engineer (UK), Backend Engineer (Turkey), 2x Partnership
+Executives, Head of Data & Analytics.
+Year 3: Senior Engineer (UK), 2x Partnership Executives, VP Marketing, 2x City
+Launch Managers (for Manchester and Birmingham).
+8. Fundraising Roadmap & KPI Gates
+To unlock subsequent funding rounds at optimal valuations, Klaim must hit specific KPI
+gates. UK consumer fintech valuations in 2026 require demonstrated traction, not just
+vision [13] [14].
+Pre-Seed (Current)
+Target: £750K
+Expected Valuation: £3M - £4M (Pre-money)
+
+-- 9 of 12 --
+
+Use of Funds: 100% focused on London Go-To-Market. Heavy allocation to
+performance marketing, influencer partnerships, and early team hires (Head of
+Partnerships, Marketing Manager).
+KPIs to Unlock Seed: 7,200 Active Users, 480 Restaurant Venues (48 Brands), £10K+
+MRR, 30%+ Month-1 Retention.
+Seed (Q1 2027)
+Target: £2.5M
+Expected Valuation: £8M - £12M (Pre-money)
+Use of Funds: Scale London dominance, launch analytics SaaS product, and begin
+expansion to secondary UK cities (Manchester, Birmingham).
+KPIs to Unlock Series A: 57,000 Active Users, 1,100 Restaurant Venues (110
+Brands), £1M+ ARR, 68%+ Gross Margin, proven SaaS adoption (>30% of brands).
+Series A (Q1 2028)
+Target: £8M+
+Expected Valuation: £35M - £50M (Pre-money)
+Use of Funds: National UK rollout, launch of B2B data products, and preparation
+for European expansion via single-API providers like Yapily.
+9. SWOT Analysis & Failure Modes
+A realistic assessment of Klaim’s strategic position requires acknowledging where the
+model is most vulnerable.
+Strengths
+Zero POS Integration: Removes the single biggest barrier to B2B sales in
+hospitality.
+Founder Network: Existing relationships with premium UK restaurant groups via
+Growdash bypasses the typical B2B cold-start problem.
+Tech Readiness: The app and merchant portal are already built, eliminating
+technical execution risk from the pre-seed phase.
+
+-- 10 of 12 --
+
+Weaknesses
+Margin Sensitivity: The model relies on open banking API costs remaining low.
+Any pricing changes by TrueLayer or GoCardless directly impact gross margins.
+Capital Intensity of B2C: Acquiring consumers in London is expensive. If organic
+viral loops (Drop Buddies) fail to take hold, CAC will drain the pre-seed runway
+quickly.
+Opportunities
+The claim.co Precedent: The US acquisition proves the exit potential and
+commercial viability of the exact mechanic Klaim is deploying.
+SaaS Upsell: Transitioning from a pure transactional model to a recurring SaaS
+model (Analytics) significantly increases the valuation multiple at Series A.
+Threats & Failure Modes
+1. The Two-Sided Marketplace Cold Start:
+The Risk: Users download the app but find no restaurants they like;
+restaurants sign up but see no footfall.
+The Mitigation: Klaim must execute a supply-led launch. The founder
+network must be leveraged to secure 30-50 premium London venues
+before
+any consumer marketing begins. Supply must be artificially constrained to
+specific London zones (e.g., Soho, Shoreditch) to ensure density.
+2. Restaurant Churn Due to Low Volume:
+The Risk: Restaurants don’t see enough Klaim users to justify keeping the
+dashboard active.
+The Mitigation: The “Drop” mechanic allows Klaim to artificially direct
+demand. If a partner is seeing low volume, Klaim can boost their visibility in
+the next drop to deliver a sudden spike in footfall, proving the ROI.
+3. Open Banking Friction:
+The Risk: Consumers drop off during the bank-linking phase due to security
+concerns.
+The Mitigation: Messaging must heavily lean on FCA regulation and bank-level
+security. The promise of “real cash” must be strong enough to overcome the
+initial friction of linking an account.
+
+-- 11 of 12 --
+
+10. Conclusion
+Klaim is positioned to solve a £3 billion attribution problem for UK restaurants while
+giving Gen Z the frictionless, cash-based rewards they demand. By eliminating tech build
+costs from the pre-seed phase and deferring founder salaries, the £750K raise provides
+exceptional runway to aggressively acquire the initial London network. The path to a
+£10M+ Seed valuation is clear, provided the team executes a disciplined, supply-led
+launch in Month 3 with an initial cohort of 30 premium brands.
+References
+[1] Lumina Intelligence. (2025).
+UK Eating Out Market Report 2025. [2] SevenRooms.
+(2024).
+2024 U.K. Restaurant Trends and Diner Expectations Report. [3] eMarketer. (2025).
+UK’s Gen Zers prioritize deals over brand loyalty. [4] Open Banking Implementation
+Entity (OBIE). (2026).
+Open Banking in 2025: Now Part of the UK’s Everyday Financial Life.
+[5] International Journal of Hospitality Management.	
+Voucher Promotions and
+Consumer Behaviour in UK Premium Restaurants. [6] Nation’s Restaurant News. (2025).
+73% of Millennials and Gen Z let social media guide their restaurant choices. [7] Mordor
+Intelligence. (2026).
+United Kingdom Full Service Restaurants Market Forecasts. [8] Audit
+Consulting Group. (2024).
+UK Restaurant & Pub Revenue Trends and Outlook. [9]
+Restroworks. (2025).
+London Restaurant Industry Statistics 2025. [10] Wonder Group.
+(2026).
+Claim by Grubhub, a Wonder company. [11] Finexer. (2026).
+Open Banking
+Pricing: UK Buyer’s Guide [2026 Edition]. [12] GoCardless. (2026).
+Pricing & Fees. [13]
+Pitchwise. (2026).
+Median Seed Round Size by Industry in 2026. [14] FE International.
+(2026).
+How to Value a FinTech Business in 2026. [15] SeedLegals. (2025).
+2025 UK
+founder salaries revealed.
+
+-- 12 of 12 --
+

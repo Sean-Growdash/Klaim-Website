@@ -1,0 +1,11 @@
+{
+  "name": "klaim-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-klaim.mjs",
+    "start": "python3 -m http.server 4173 --directory dist",
+    "preview": "npm run start"
+  }
+}

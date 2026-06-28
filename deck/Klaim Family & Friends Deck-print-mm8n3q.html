@@ -1,0 +1,1432 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Klaim — Friends &amp; Family · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" />
+<style>
+  :root{
+    --ink:#2F196B; --ink-deep:#1F0F4A;
+    --lime:#C7FF4F; --lime-deep:#A8E837;
+    --cream:#F4EDE6; --cream-2:#EDE5DC;
+    --pink:#FF6B9D; --white:#FFFFFF;
+    --muted:rgba(47,25,107,.62);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#0a0612;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.04em;line-height:.92;text-wrap:balance}
+  .hl{display:inline-block;background:var(--lime);color:var(--ink);padding:0 .12em;border-radius:14px}
+  .strike{position:relative;display:inline-block}
+  .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:55%;height:8px;background:var(--pink);transform:rotate(-3deg)}
+
+  deck-stage section{
+    background:var(--cream);
+    color:var(--ink);
+    padding:80px 96px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+  }
+  section.ink{background:var(--ink);color:var(--cream)}
+  section.ink .hl{background:var(--lime);color:var(--ink)}
+  section.lime{background:var(--lime);color:var(--ink)}
+  section.cream-2{background:var(--cream-2)}
+
+  .logo{display:flex;align-items:center;gap:14px;font-family:'Bricolage Grotesque',sans-serif;font-size:40px;font-weight:700;letter-spacing:-.04em}
+  .logo .mark{width:56px;height:56px;background:var(--ink);border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--lime);font-weight:800;font-size:30px;letter-spacing:-.06em}
+  section.ink .logo .mark{background:var(--lime);color:var(--ink)}
+
+  .topbar{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600}
+  .topbar .meta{color:var(--muted);font-size:19px;font-weight:800;letter-spacing:-.01em}
+  section.ink .topbar .meta{color:rgba(244,237,230,.6)}
+
+  .footbar{margin-top:auto;display:flex;justify-content:space-between;align-items:end;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+  section.ink .footbar{color:rgba(244,237,230,.55)}
+
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.14em;padding:7px 14px;background:transparent;border:1.5px solid var(--ink);border-radius:999px}
+  section.ink .eyebrow{color:var(--lime);border-color:var(--lime)}
+  section.lime .eyebrow{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+
+  .display-xl{font-size:80px;line-height:.92;letter-spacing:-.04em}
+  .display-l{font-size:80px;line-height:.92;letter-spacing:-.04em}
+  .display-m{font-size:80px;line-height:.92;letter-spacing:-.04em}
+  .display-s{font-size:80px;line-height:.92;letter-spacing:-.04em}
+  .lede{font-size:28px;line-height:1.4;font-weight:500;color:var(--muted);max-width:980px}
+  section.ink .lede{color:rgba(244,237,230,.78)}
+  .body{font-size:18px;line-height:1.5;font-weight:500}
+
+  /* SHARED LAYOUT */
+  .body-area{flex:1;display:flex;flex-direction:column;justify-content:center;margin:48px 0}
+  .head-row{display:grid;grid-template-columns:1.15fr .85fr;gap:36px 64px;align-items:end;padding-bottom:28px;border-bottom:1.5px solid var(--ink);margin-bottom:48px}
+  section.ink .head-row{border-bottom-color:rgba(244,237,230,.2)}
+  .head-row .lede{justify-self:end;max-width:520px;font-size:22px;padding-bottom:8px}
+
+  /* TAGS / chips */
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--lime);color:var(--ink);font-size:13px;font-weight:700;border:1.5px solid var(--ink)}
+  .chip.dark{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+  .chip.cream{background:var(--cream);color:var(--ink);border-color:var(--ink)}
+
+  /* Citation note */
+  .ref{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.04em}
+  section.ink .ref{color:rgba(244,237,230,.5)}
+
+  /* Stat blocks */
+  .stat{display:flex;flex-direction:column;gap:8px}
+  .stat .v{font-family:'Bricolage Grotesque',sans-serif;font-size:148px;font-weight:800;line-height:.85;letter-spacing:-.05em}
+  .stat .k{font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .stat .desc{font-size:17px;color:var(--muted);font-weight:500;line-height:1.4;max-width:300px}
+  section.ink .stat .k,section.ink .stat .desc{color:rgba(244,237,230,.65)}
+
+  /* Cards */
+  .card{background:var(--white);border:1.5px solid var(--ink);border-radius:24px;padding:40px;display:flex;flex-direction:column;gap:16px}
+  .card.ink{background:var(--ink);color:var(--cream)}
+  .card.lime{background:var(--lime);color:var(--ink)}
+  .card.pink{background:var(--pink);color:var(--ink)}
+  .card.cream{background:var(--cream-2);border-color:var(--ink)}
+  section.ink .card{background:var(--cream);color:var(--ink)}
+
+  /* Slide num overlay */
+  deck-stage::part(counter){background:var(--ink);color:var(--lime);font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+
+  /* PHONE MOCK */
+  .phone{width:280px;border-radius:38px;background:var(--ink);padding:14px;border:2px solid var(--ink);box-shadow:0 30px 80px -20px rgba(47,25,107,.4)}
+  .phone-screen{background:var(--cream);border-radius:26px;overflow:hidden;padding:20px 18px;display:flex;flex-direction:column;gap:14px;height:520px}
+  .ph-h{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;color:var(--ink)}
+  .ph-h .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lime);border:1px solid var(--ink);margin-right:6px;vertical-align:middle}
+  .ph-h2{font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.03em;line-height:1}
+  .drop-mini{background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:14px;display:flex;gap:12px;align-items:center}
+  .drop-mini.lime{background:var(--lime)}
+  .drop-mini .img{width:48px;height:48px;border-radius:12px;background:var(--ink);display:flex;align-items:center;justify-content:center;font-size:22px}
+  .drop-mini .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em}
+  .drop-mini .sub{font-size:11px;color:var(--muted);font-weight:600;margin-top:2px}
+  .drop-mini .amt{margin-left:auto;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.03em}
+
+  /* DASH MOCK */
+  .dashw{background:var(--white);border:1.5px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(47,25,107,.4)}
+  .dashw .bar{background:var(--ink);padding:10px 16px;display:flex;align-items:center;gap:10px;color:var(--cream);font-size:11px}
+  .dashw .bar .dots{display:flex;gap:5px}
+  .dashw .bar .dots span{width:9px;height:9px;border-radius:50%;background:rgba(244,237,230,.3)}
+  .dashw .bar .dots span:first-child{background:var(--pink)}
+  .dashw .bar .dots span:nth-child(2){background:var(--lime)}
+  .dashw .bod{padding:18px}
+  .dashw .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+  .dashw .kpi{background:var(--cream-2);border:1.5px solid var(--ink);border-radius:12px;padding:12px}
+  .dashw .kpi.hi{background:var(--lime)}
+  .dashw .kpi .l{font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+  .dashw .kpi .v{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:700;letter-spacing:-.03em;margin-top:4px;line-height:1}
+  .dashw .kpi .d{font-size:9px;color:var(--ink);font-weight:600;margin-top:2px}
+
+  /* TABLE */
+  .tbl{width:100%;border-collapse:collapse;font-size:18px}
+  .tbl th,.tbl td{padding:18px 20px;text-align:left;border-bottom:1px solid rgba(47,25,107,.15)}
+  .tbl thead th{background:var(--ink);color:var(--cream);font-size:14px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;border-bottom:none}
+  .tbl thead th:first-child{border-top-left-radius:14px}
+  .tbl thead th:last-child{border-top-right-radius:14px}
+  .tbl tbody tr.hi{background:var(--lime)}
+  .tbl tbody tr.hi td{font-weight:700}
+  .tbl tbody tr:last-child td{border-bottom:none}
+  .tbl .yes{color:var(--ink);font-weight:700}
+  .tbl .no{color:var(--muted);font-weight:600}
+  .tbl-wrap{background:var(--white);border:1.5px solid var(--ink);border-radius:16px;overflow:hidden}
+  section.ink .tbl-wrap{background:var(--cream)}
+
+  /* Drop steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{background:var(--white);border:1.5px solid var(--ink);border-radius:24px;padding:40px;display:flex;flex-direction:column;gap:18px;min-height:420px}
+  .step.lime{background:var(--lime)}
+  .step.ink{background:var(--ink);color:var(--cream)}
+  .step .num{font-family:'Bricolage Grotesque',sans-serif;font-size:96px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:var(--ink)}
+  .step.ink .num{color:var(--lime)}
+  .step h3{font-size:42px}
+  .step p{font-size:19px;line-height:1.5;color:var(--muted);font-weight:500}
+  .step.ink p{color:rgba(244,237,230,.78)}
+  .step.lime p{color:rgba(47,25,107,.75)}
+
+  /* HSplit */
+  .hsplit{display:grid;grid-template-columns:1fr 1fr;gap:32px;flex:1}
+  .vsplit{display:flex;flex-direction:column;gap:18px}
+
+  /* Money flow */
+  .flow{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+  .flow-card{background:var(--white);border:1.5px solid var(--ink);border-radius:24px;padding:44px}
+  .flow-card.ink{background:var(--ink);color:var(--cream)}
+  .flow-row{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px dashed rgba(47,25,107,.2);font-size:20px;font-weight:600}
+  .flow-card.ink .flow-row{border-bottom-color:rgba(244,237,230,.18)}
+  .flow-row.total{border-bottom:none;border-top:1.5px solid var(--ink);margin-top:8px;padding-top:22px;font-size:26px}
+  .flow-card.ink .flow-row.total{border-top-color:var(--lime);color:var(--lime)}
+  .flow-row .amt{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:26px;letter-spacing:-.02em}
+  .flow-row.total .amt{font-size:44px}
+
+  /* Bar chart */
+  .bars{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-items:end;height:440px}
+  .bar-col{display:flex;flex-direction:column;align-items:center;gap:14px;height:100%}
+  .bar-col .b{width:100%;border-radius:12px 12px 0 0;border:1.5px solid var(--ink);position:relative;display:flex;align-items:flex-start;justify-content:center;padding-top:22px;font-family:'Bricolage Grotesque',sans-serif;font-size:48px;font-weight:800;letter-spacing:-.04em}
+  .bar-col .y{font-size:16px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+  /* Use of funds donut */
+  .donut-row{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+  .legend{display:flex;flex-direction:column;gap:14px}
+  .leg-item{display:flex;align-items:baseline;gap:14px;padding:18px 0;border-bottom:1px solid rgba(47,25,107,.15);font-size:19px;font-weight:600}
+  .leg-item .sw{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--ink);flex:none}
+  .leg-item .pct{margin-left:auto;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32px;letter-spacing:-.03em}
+
+  /* Team grid */
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .team-card{background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:10px;min-height:200px}
+  .team-card.hi{background:var(--lime)}
+  .team-card .role{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.05}
+  .team-card .when{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .team-card .who{font-size:15px;font-weight:600}
+
+  /* KPI gates */
+  .gates{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .gate{border-radius:24px;padding:40px;border:1.5px solid var(--ink);display:flex;flex-direction:column;gap:18px}
+  .gate.now{background:var(--lime)}
+  .gate.next{background:var(--white)}
+  .gate.future{background:var(--ink);color:var(--cream)}
+  .gate .stage{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+  .gate.future .stage{color:rgba(244,237,230,.6)}
+  .gate .raise{font-family:'Bricolage Grotesque',sans-serif;font-size:88px;font-weight:800;letter-spacing:-.04em;line-height:.85}
+  .gate.future .raise{color:var(--lime)}
+  .gate .when{font-size:16px;font-weight:700;color:var(--muted)}
+  .gate.future .when{color:rgba(244,237,230,.6)}
+  .gate ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:8px;font-size:16px}
+  .gate li{display:flex;gap:10px;font-weight:600;line-height:1.35}
+  .gate li::before{content:"→";color:var(--ink);font-weight:700}
+  .gate.future li::before{color:var(--lime)}
+
+  /* SWOT */
+  .swot{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .swot-card{background:var(--white);border:1.5px solid var(--ink);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:12px}
+  .swot-card .lab{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .swot-card h4{font-size:30px;line-height:1.05}
+  .swot-card.s{background:var(--lime)}
+  .swot-card.w{background:var(--cream-2)}
+  .swot-card.o{background:var(--white)}
+  .swot-card.t{background:var(--pink)}
+  .swot-card ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.45;font-weight:500}
+  .swot-card li{display:flex;gap:8px}
+  .swot-card li::before{content:"·";font-weight:800;color:var(--ink)}
+
+</style>
+</head>
+<body>
+
+<script type="application/json" id="speaker-notes">
+[
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  ""
+]
+</script>
+
+<deck-stage>
+
+<!-- ============== SLIDE 01 — TITLE ============== -->
+<section data-screen-label="01 Cover" style="padding:80px 96px;background:var(--ink);position:relative;overflow:hidden;display:flex;flex-direction:column">
+  <!-- Subtle depth glow -->
+  <div style="position:absolute;top:-10%;right:10%;width:70%;height:70%;background:radial-gradient(ellipse,rgba(199,255,79,.07) 0%,transparent 65%);pointer-events:none"></div>
+  <div style="position:absolute;bottom:-20%;left:-10%;width:60%;height:60%;background:radial-gradient(ellipse,rgba(199,255,79,.04) 0%,transparent 60%);pointer-events:none"></div>
+
+  <!-- LARGE LOGO -->
+  <div style="display:flex;align-items:center;gap:22px;z-index:1">
+    <div style="width:88px;height:88px;background:var(--lime);border-radius:22px;display:flex;align-items:center;justify-content:center;color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:48px;letter-spacing:-.06em;flex:none">K</div>
+    <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:700;letter-spacing:-.04em;color:var(--cream);line-height:1">Klaim</span>
+  </div>
+
+  <!-- HEADLINE AREA -->
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;max-width:1050px;z-index:1">
+    <span class="eyebrow" style="font-size:15px;padding:10px 20px">£30K Friends &amp; Family · 100% London Go-To-Market</span>
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-size:116px;font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--cream);white-space:nowrap">Get paid to eat <span class="hl">out.</span></h1>
+    <p style="font-size:26px;line-height:1.4;font-weight:500;color:rgba(244,237,230,.72);max-width:680px">The UK's first performance-based restaurant discovery app — built on Open Banking. Restaurants pay only for verified covers. Diners get real cash, not points.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="margin-top:48px;z-index:1;font-size:12px;font-weight:600;color:rgba(244,237,230,.4);letter-spacing:.08em;text-transform:uppercase;text-align:right">klaim-app.com</div>
+
+  <!-- PHONE — iPhone frame, tilted, more central -->
+  <div style="position:absolute;right:110px;top:38px;transform:rotate(8deg) scale(0.92);transform-origin:center center;z-index:2">
+    <img src="klaim-app/phone.png" width="550" height="1004" alt="Klaim app — Drops screen" style="display:block" />
+  </div>
+</section>
+
+<!-- ============== SLIDE 02 — RESTAURANT PROBLEM ============== -->
+<section data-screen-label="02 Restaurant Problem" style="padding:72px 96px">
+  <div class="topbar">
+    <div style="display:flex;align-items:center;gap:14px">
+      <div style="width:56px;height:56px;background:var(--ink);border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--lime);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.06em;flex:none">K</div>
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:40px;font-weight:700;letter-spacing:-.04em;color:var(--ink);line-height:1">Klaim</span>
+    </div>
+    <div class="meta">Problem · 1 of 2</div>
+  </div>
+
+  <div style="flex:1;display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center;margin:36px 0">
+
+    <!-- LEFT: headline + stats -->
+    <div style="display:flex;flex-direction:column;gap:36px">
+      <span class="eyebrow" style="align-self:flex-start">The restaurant side</span>
+
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:76px;font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink)">£3B spent on social.<br/>Zero <span class="hl">verified covers.</span></h2>
+
+      <p style="font-size:20px;line-height:1.5;font-weight:500;color:var(--muted);max-width:540px;border-left:3px solid var(--ink);padding-left:20px">84% of UK operators pour their budget into Instagram and TikTok. Neither platform has a mechanism to verify a single in-venue card transaction. They're flying blind.</p>
+
+      <!-- 3 stats -->
+      <div style="display:flex;gap:0;border-top:1px solid rgba(47,25,107,.12);padding-top:36px">
+        <div style="flex:1;padding-right:32px;border-right:1px solid rgba(47,25,107,.12)">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:72px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:var(--ink)">£3B</div>
+          <div style="font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:10px">UK social spend / yr</div>
+        </div>
+        <div style="flex:1;padding:0 32px;border-right:1px solid rgba(47,25,107,.12)">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:72px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:var(--pink)">£18</div>
+          <div style="font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:10px">avg cost per cover</div>
+        </div>
+        <div style="flex:1;padding-left:32px">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:72px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:rgba(47,25,107,.18)">—</div>
+          <div style="font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:10px">covers attributed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: the receipt that never arrives -->
+    <div style="background:var(--white);border:1.5px solid rgba(47,25,107,.15);border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(47,25,107,.08)">
+
+      <!-- Card header -->
+      <div style="padding:20px 28px;border-bottom:1px solid rgba(47,25,107,.1);display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:13px;font-weight:700;color:var(--ink);font-family:'Bricolage Grotesque',sans-serif">Monthly campaign · Dishoom Shoreditch</div>
+        <div style="font-size:11px;font-weight:700;color:var(--pink);text-transform:uppercase;letter-spacing:.08em">Meta Ads · Mar 2026</div>
+      </div>
+
+      <!-- Rows: what you can see -->
+      <div style="padding:8px 0">
+        <div style="padding:16px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(47,25,107,.07)">
+          <span style="font-size:15px;font-weight:500;color:var(--muted)">Amount spent</span>
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;color:var(--ink)">£4,200</span>
+        </div>
+        <div style="padding:16px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(47,25,107,.07)">
+          <span style="font-size:15px;font-weight:500;color:var(--muted)">Impressions</span>
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;color:var(--ink)">1,247,830</span>
+        </div>
+        <div style="padding:16px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(47,25,107,.07)">
+          <span style="font-size:15px;font-weight:500;color:var(--muted)">Reach</span>
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;color:var(--ink)">284,400</span>
+        </div>
+        <div style="padding:16px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(47,25,107,.07)">
+          <span style="font-size:15px;font-weight:500;color:var(--muted)">Engagement rate</span>
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;color:var(--ink)">4.8%</span>
+        </div>
+        <div style="padding:16px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(47,25,107,.07)">
+          <span style="font-size:15px;font-weight:500;color:var(--muted)">Link clicks</span>
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;color:var(--ink)">3,840</span>
+        </div>
+      </div>
+
+      <!-- The killer row -->
+      <div style="margin:0 20px 20px;border:1.5px dashed rgba(255,107,157,.5);border-radius:16px;padding:22px 24px;background:rgba(255,107,157,.06)">
+        <div style="font-size:12px;font-weight:700;color:var(--pink);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px">Covers attributed to this campaign</div>
+        <div style="display:flex;align-items:center;gap:24px">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:72px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--pink);flex:none">?</div>
+          <div>
+            <div style="font-size:15px;font-weight:700;color:var(--ink);line-height:1.45">"Not available. Offline conversion tracking required."</div>
+            <div style="font-size:13px;font-weight:500;color:var(--muted);margin-top:6px;line-height:1.5">i.e. voucher codes, POS integrations &amp; staff manually punching codes at the till.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footbar"><div>02 / 15</div><div class="ref">Sources: SevenRooms 2024 · Lumina Intelligence 2025</div></div>
+</section>
+
+<!-- ============== SLIDE 03 — DINER PROBLEM ============== -->
+<section data-screen-label="03 Diner Problem" style="padding:72px 96px;position:relative;overflow:hidden">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Problem · 2 of 2</div>
+  </div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;margin:36px 0;max-width:56%">
+
+    <!-- LEFT: diner problem -->
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <span class="eyebrow" style="align-self:flex-start">The diner side</span>
+
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:76px;font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink)">Gen Z is done<br/>with <span class="hl">points &amp; stamps.</span></h2>
+
+      <p style="font-size:20px;line-height:1.5;font-weight:500;color:var(--muted);max-width:560px;border-left:3px solid var(--ink);padding-left:20px">73% of Gen Z use social to pick where to eat. Their feeds loop the same 12 viral spots — and loyalty programs reward them with expiring points worth pennies.</p>
+
+      <!-- Contrast cards -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px">
+        <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:20px;padding:24px 22px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)">What they reject</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--ink)">Points. Vouchers.<br/>Stamp cards.</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:var(--muted)">
+            <li style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--pink);font-weight:700;flex:none">✗</span>Points expire before use</li>
+            <li style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--pink);font-weight:700;flex:none">✗</span>Vouchers are awkward at the till</li>
+            <li style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--pink);font-weight:700;flex:none">✗</span>Damages premium brand perception</li>
+          </ul>
+        </div>
+        <div style="background:var(--lime);border:1.5px solid var(--ink);border-radius:20px;padding:24px 22px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(47,25,107,.7)">What they want</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--ink)">Real cash. Now.<br/>With friends.</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:rgba(47,25,107,.78)">
+            <li style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--ink);font-weight:700;flex:none">✓</span>Instant cash straight to bank</li>
+            <li style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--ink);font-weight:700;flex:none">✓</span>Discovery beyond the algorithm</li>
+            <li style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--ink);font-weight:700;flex:none">✓</span>Social — do it with friends</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PHONE — exact same as Slide 1 -->
+  <div style="position:absolute;right:110px;top:38px;transform:rotate(8deg) scale(0.92);transform-origin:center center;z-index:2">
+    <img src="klaim-app/phone.png" width="550" height="1004" alt="Klaim app — Drops screen" style="display:block" />
+  </div>
+
+  <div class="footbar"><div>03 / 15</div><div class="ref">Sources: Nation's Restaurant News 2025 · eMarketer 2025 · Int'l Journal of Hospitality Mgmt</div></div>
+</section>
+
+<!-- ============== SLIDE 04 — SOLUTION (THE DROP) ============== -->
+<section data-screen-label="04 Solution — The Drop" style="padding:72px 96px;background:var(--cream-2)">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Solution · The Drop</div>
+  </div>
+
+  <div style="flex:1;display:grid;grid-template-columns:1.3fr .7fr;gap:80px;align-items:center;margin:36px 0">
+
+    <!-- LEFT: mechanism -->
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <span class="eyebrow" style="align-self:flex-start">The Klaim Drop</span>
+
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:76px;font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink)">One mechanic.<br/>Both sides <span class="hl">solved.</span></h2>
+
+      <p style="font-size:20px;line-height:1.5;font-weight:500;color:var(--muted);max-width:560px;border-left:3px solid var(--ink);padding-left:20px">Card-linked cashback drops, twice a week. No QR codes. No vouchers. No POS. Open Banking matches the transaction invisibly — restaurants pay only when a diner walks in, eats, and pays.</p>
+
+      <!-- 3-step flow -->
+      <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:stretch;margin-top:4px;max-width:700px">
+        <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:16px;padding:18px 16px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px">01</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;color:var(--ink);line-height:1.05">Drop arrives</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px;font-weight:500;line-height:1.4">Mon &amp; Fri 9am — curated cashback offers, personalised to you</div>
+        </div>
+        <div style="display:flex;align-items:center;color:var(--muted);font-size:22px;padding:0 4px">→</div>
+        <div style="background:var(--lime);border:1.5px solid var(--ink);border-radius:16px;padding:18px 16px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(47,25,107,.6);margin-bottom:8px">02</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;color:var(--ink);line-height:1.05">Diner pays</div>
+          <div style="font-size:13px;color:rgba(47,25,107,.75);margin-top:6px;font-weight:500;line-height:1.4">Tap the linked card. No code, no voucher, no hassle for diners or staff.</div>
+        </div>
+        <div style="display:flex;align-items:center;color:var(--muted);font-size:22px;padding:0 4px">→</div>
+        <div style="background:var(--ink);border:1.5px solid var(--ink);border-radius:16px;padding:18px 16px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(244,237,230,.45);margin-bottom:8px">03</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;color:var(--cream);line-height:1.05">Both win</div>
+          <div style="font-size:13px;color:rgba(244,237,230,.65);margin-top:6px;font-weight:500;line-height:1.4">Cash to diner's bank. Verified cover in restaurant dashboard.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: dual value cards -->
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <!-- Restaurant value -->
+      <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:20px;padding:22px 24px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px">For restaurants</div>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink)">£6</span>
+          <span style="font-size:15px;font-weight:600;color:var(--ink)">per verified cover</span>
+          <span style="font-size:13px;font-weight:600;color:var(--pink);text-decoration:line-through">was £18 via social</span>
+        </div>
+        <div style="border-top:1px solid rgba(47,25,107,.12);margin:14px 0"></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:var(--ink)">
+          <li style="display:flex;gap:10px;align-items:flex-start"><span style="background:var(--lime);color:var(--ink);width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none;border:1.5px solid var(--ink);margin-top:1px">✓</span>Pay only on completed, verified covers</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><span style="background:var(--lime);color:var(--ink);width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none;border:1.5px solid var(--ink);margin-top:1px">✓</span>Real receipts. 5.2× ROAS. No asterisks.</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><span style="background:var(--lime);color:var(--ink);width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none;border:1.5px solid var(--ink);margin-top:1px">✓</span>Zero POS · zero codes · zero till changes</li>
+        </ul>
+      </div>
+
+      <!-- Diner value -->
+      <div style="background:var(--lime);border:1.5px solid var(--ink);border-radius:20px;padding:22px 24px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(47,25,107,.65);margin-bottom:12px">For diners</div>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink)">+£18</span>
+          <span style="font-size:15px;font-weight:600;color:rgba(47,25,107,.8)">avg cashback per drop · straight to your bank</span>
+        </div>
+        <div style="border-top:1px solid rgba(47,25,107,.18);margin:14px 0"></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:var(--ink)">
+          <li style="display:flex;gap:10px;align-items:flex-start"><span style="background:var(--ink);color:var(--lime);width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none;margin-top:1px">✓</span>Real cash — not points, not vouchers</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><span style="background:var(--ink);color:var(--lime);width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none;margin-top:1px">✓</span>Instant via Faster Payments — before pudding lands</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><span style="background:var(--ink);color:var(--lime);width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none;margin-top:1px">✓</span>Discovery beyond the algorithm — never the same 12 spots</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footbar"><div>04 / 15</div><div>Zero POS · Zero codes · Zero asterisks</div></div>
+</section>
+
+<!-- ============== SLIDE 05 — WHY NOW ============== -->
+<section data-screen-label="05 Why Now" style="padding:72px 96px">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Why now</div>
+  </div>
+
+  <div style="flex:1;display:grid;grid-template-columns:.55fr 1fr;gap:64px;align-items:center;margin:36px 0">
+
+    <!-- LEFT -->
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <span class="eyebrow" style="align-self:flex-start">2026 — four tailwinds, one window</span>
+
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:76px;font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink)">The window<br/>is <span class="hl">right now.</span></h2>
+
+      <p style="font-size:20px;line-height:1.5;font-weight:500;color:var(--muted);max-width:560px;border-left:3px solid var(--ink);padding-left:20px">This wasn't possible in 2022 — Open Banking volume was a fraction. It won't be uncontested in 2028. Infrastructure, behaviour, market proof and restaurant urgency have all converged.</p>
+
+      <!-- Timestamp -->
+      <div style="display:flex;align-items:center;gap:16px;margin-top:4px">
+        <div style="height:1px;flex:1;background:rgba(47,25,107,.15)"></div>
+        <div style="font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase">2026 → 2028 · act now</div>
+        <div style="height:1px;flex:1;background:rgba(47,25,107,.15)"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: 2×2 tailwind tiles -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+
+      <!-- 01 -->
+      <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:20px;padding:22px 20px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">01 · Infra</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--ink)">Open Banking is mainstream</div>
+        <p style="font-size:13px;font-weight:500;color:var(--muted);line-height:1.5;margin:0">16.5M UK users. 41% of UK adults already using it. Card-linking is how Monzo, Revolut &amp; HSBC work.</p>
+        <div style="font-size:11px;font-weight:600;color:var(--muted);margin-top:auto;padding-top:8px;border-top:1px solid rgba(47,25,107,.1)">OBIE 2026</div>
+      </div>
+
+      <!-- 02 -->
+      <div style="background:var(--lime);border:1.5px solid var(--ink);border-radius:20px;padding:22px 20px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(47,25,107,.65)">02 · Behaviour</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--ink)">Gen Z dines &amp; rejects loyalty</div>
+        <p style="font-size:13px;font-weight:500;color:rgba(47,25,107,.75);line-height:1.5;margin:0">34% of UK consumers eat out 3+×/month. Gen Z frequency is climbing fastest — they want real cash, not expiring points.</p>
+        <div style="font-size:11px;font-weight:600;color:rgba(47,25,107,.55);margin-top:auto;padding-top:8px;border-top:1px solid rgba(47,25,107,.15)">eMarketer 2025</div>
+      </div>
+
+      <!-- 03 -->
+      <div style="background:var(--ink);border:1.5px solid var(--ink);border-radius:20px;padding:22px 20px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(244,237,230,.45)">03 · Validation</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--cream)">claim.co just exited</div>
+        <p style="font-size:13px;font-weight:500;color:rgba(244,237,230,.7);line-height:1.5;margin:0">Identical mechanic, proven at scale in the US. Acquired by Wonder Group (Grubhub's parent). UK has zero direct equivalent.</p>
+        <div style="font-size:11px;font-weight:600;color:rgba(244,237,230,.4);margin-top:auto;padding-top:8px;border-top:1px solid rgba(244,237,230,.12)">Wonder Group 2026</div>
+      </div>
+
+      <!-- 04 -->
+      <div style="background:var(--white);border:1.5px solid var(--pink);border-radius:20px;padding:22px 20px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)">04 · Restaurant urgency</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--ink)">Dine-in over delivery</div>
+        <p style="font-size:13px;font-weight:500;color:var(--muted);line-height:1.5;margin:0">Restaurants are pushing dine-in hard — Deliveroo &amp; JustEat commissions hit 30–35%. True attribution to spend is the missing piece.</p>
+        <div style="font-size:11px;font-weight:600;color:var(--muted);margin-top:auto;padding-top:8px;border-top:1px solid rgba(255,107,157,.2)">UKHospitality 2025</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footbar"><div>05 / 15</div><div>The window: 2026 → 2028</div></div>
+</section>
+
+<!-- ============== SLIDE 06 — MARKET ============== -->
+<section data-screen-label="06 Market" style="padding:72px 96px">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Market</div>
+  </div>
+
+  <div style="flex:1;display:grid;grid-template-columns:.55fr 1fr;gap:64px;align-items:center;margin:36px 0">
+
+    <!-- LEFT: why London -->
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <span class="eyebrow" style="align-self:flex-start">UK eating out · 2026</span>
+
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:76px;font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink)">£101B market.<br/>One <span class="hl">city</span> first.</h2>
+
+      <div style="background:var(--ink);border-radius:20px;padding:24px 24px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(244,237,230,.45)">Why London — and only London</div>
+        <p style="font-size:16px;line-height:1.6;font-weight:500;color:rgba(244,237,230,.85);margin:0">London is <strong style="color:var(--lime)">22.6%</strong> of all UK hospitality revenue with a <strong style="color:var(--lime)">32% spend premium</strong>. 11,400 restaurants in 600km² — the only place in the UK with the density to bootstrap a two-sided marketplace.</p>
+      </div>
+
+      <p style="font-size:15px;line-height:1.5;font-weight:500;color:var(--muted);border-left:3px solid var(--ink);padding-left:16px;margin:0">Nail London. Then Bristol, Manchester, Edinburgh follow the same playbook.</p>
+    </div>
+
+    <!-- RIGHT: 2×2 metric tiles -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+
+      <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">UK eating-out market</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:var(--ink)">£101B</div>
+        <p style="font-size:13px;font-weight:500;color:var(--muted);line-height:1.4;margin:0">Total UK hospitality spend, projected end-2026.</p>
+        <div style="font-size:11px;font-weight:600;color:var(--muted);margin-top:auto;padding-top:10px;border-top:1px solid rgba(47,25,107,.1)">Lumina 2026</div>
+      </div>
+
+      <div style="background:var(--lime);border:1.5px solid var(--ink);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(47,25,107,.65)">Full-service · our SOM</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:var(--ink)">£35.7B</div>
+        <p style="font-size:13px;font-weight:500;color:rgba(47,25,107,.72);line-height:1.4;margin:0">Full-service dining — our serviceable, obtainable market.</p>
+        <div style="font-size:11px;font-weight:600;color:rgba(47,25,107,.5);margin-top:auto;padding-top:10px;border-top:1px solid rgba(47,25,107,.15)">Mordor Intelligence 2026</div>
+      </div>
+
+      <div style="background:var(--ink);border:1.5px solid var(--ink);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(244,237,230,.45)">London's share</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:var(--lime)">22.6%</div>
+        <p style="font-size:13px;font-weight:500;color:rgba(244,237,230,.7);line-height:1.4;margin:0">Of all UK hospitality revenue. Plus a 32% avg spend premium vs national.</p>
+        <div style="font-size:11px;font-weight:600;color:rgba(244,237,230,.4);margin-top:auto;padding-top:10px;border-top:1px solid rgba(244,237,230,.12)">ACG 2025</div>
+      </div>
+
+      <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">London restaurants</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:var(--ink)">11,400</div>
+        <p style="font-size:13px;font-weight:500;color:var(--muted);line-height:1.4;margin:0">In 600km² — the density needed to bootstrap a two-sided marketplace.</p>
+        <div style="font-size:11px;font-weight:600;color:var(--muted);margin-top:auto;padding-top:10px;border-top:1px solid rgba(47,25,107,.1)">Restroworks 2025</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footbar"><div>06 / 15</div><div class="ref">Sources: Lumina · Mordor · ACG · Restroworks</div></div>
+</section>
+
+<!-- ============== SLIDE 07 — PRODUCT ============== -->
+<section data-screen-label="07 Product" style="padding:52px 96px">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Product · two-sided</div>
+  </div>
+
+  <!-- Centred body -->
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:20px">
+  <!-- Compact headline row -->
+  <div style="display:flex;align-items:baseline;justify-content:space-between">
+    <div style="display:flex;align-items:baseline;gap:20px">
+      <span class="eyebrow">Already built</span>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink)">Two products, one <span class="hl">network.</span></h2>
+    </div>
+    <p style="font-size:15px;font-weight:500;color:var(--muted);max-width:400px;text-align:right">iOS/Android diner app + web operator console. Both shipped — this raise is GTM, not build.</p>
+  </div>
+
+  <!-- Two large product cards -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px"> 
+
+    <!-- DINER APP CARD -->
+    <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:24px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="padding:20px 24px;border-bottom:1.5px solid var(--ink);display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">Diner app · iOS &amp; Android</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-top:2px">Drops, trades &amp; <span class="hl">buddies.</span></div>
+        </div>
+        <span style="font-size:12px;font-weight:700;background:var(--lime);color:var(--ink);padding:6px 14px;border-radius:999px;border:1.5px solid var(--ink)">Free for diners</span>
+      </div>
+      <!-- 2×2 feat grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:215px 215px;gap:0">
+
+        <!-- TOP-LEFT: Instant cashback (lime) -->
+        <div style="background:var(--lime);padding:18px 22px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:26px">💸</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em;color:var(--ink)">Instant cashback</div>
+          <div style="font-size:12px;font-weight:500;color:rgba(47,25,107,.75);line-height:1.4">Cash to your bank in 30–60 seconds. Not points. Not vouchers. Just money.</div>
+          <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:12px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;margin-top:6px">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="font-size:18px">🍛</div>
+              <div style="font-size:12px;font-weight:700;color:var(--ink)">Dishoom Shoreditch<span style="display:block;font-size:10px;font-weight:500;color:var(--muted)">Fri 19:42 · bacon naan</span></div>
+            </div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:18px;font-weight:800;color:var(--ink)">+£24<span style="display:block;font-size:10px;font-weight:600;color:var(--muted);text-align:right">→ Monzo</span></div>
+          </div>
+        </div>
+
+        <!-- TOP-RIGHT: Trade your Klaim (ink) -->
+        <div style="background:var(--ink);padding:18px 22px;border-bottom:1.5px solid var(--ink);display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:26px">🔄</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em;color:var(--cream)">Trade your Klaim</div>
+          <div style="font-size:12px;font-weight:500;color:rgba(244,237,230,.7);line-height:1.4">Got sushi but craving curry? Swap with any friend instantly.</div>
+          <div style="background:rgba(244,237,230,.08);border:1px solid rgba(244,237,230,.15);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-top:6px">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:16px;flex:none">🎉</div>
+            <div style="font-size:12px;font-weight:700;color:var(--cream)">Trade accepted with Fatima A.<span style="display:block;font-size:10px;font-weight:500;color:rgba(244,237,230,.6)">You got: Pizzeria Mozza · she got: Boba Lab</span></div>
+          </div>
+        </div>
+
+        <!-- BOTTOM-LEFT: Drop Buddies (white) -->
+        <div style="padding:18px 22px;border-right:1.5px solid var(--ink);display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:26px">👥</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em;color:var(--ink)">Drop Buddies</div>
+          <div style="font-size:12px;font-weight:500;color:var(--muted);line-height:1.4">Spot the same spot in a friend's drop. Lock in together, coordinate the table.</div>
+          <div style="background:var(--cream-2);border:1.5px solid var(--ink);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-top:6px">
+            <div style="display:flex"><div style="width:28px;height:28px;border-radius:50%;background:#FF6B9D;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:white;border:1.5px solid var(--ink);margin-right:-6px">SA</div><div style="width:28px;height:28px;border-radius:50%;background:#7DD3FC;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--ink);border:1.5px solid var(--ink);margin-right:-6px">FA</div><div style="width:28px;height:28px;border-radius:50%;background:#F59E0B;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--ink);border:1.5px solid var(--ink)">MK</div></div>
+            <div style="font-size:12px;font-weight:700;color:var(--ink)">3 friends → St. JOHN<span style="display:block;font-size:10px;font-weight:500;color:var(--muted)">Friday · 19:30 · table for 4</span></div>
+          </div>
+        </div>
+
+        <!-- BOTTOM-RIGHT: Verified social feed (white) -->
+        <div style="padding:18px 22px;display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:26px">📰</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em;color:var(--ink)">Verified social feed</div>
+          <div style="font-size:12px;font-weight:500;color:var(--muted);line-height:1.4">What friends actually ate — verified by their card, not by vibes.</div>
+          <div style="background:var(--cream-2);border:1.5px solid var(--ink);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-top:6px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#7DD3FC;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--ink);flex:none;border:1.5px solid var(--ink)">SR</div>
+            <div style="font-size:12px;font-weight:700;color:var(--ink)">Sara just ate at Padella<span style="display:block;font-size:10px;font-weight:500;color:var(--muted)">"pici cacio e pepe = life-changing 🍝" · verified</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- OPERATOR CONSOLE CARD -->
+    <div style="background:var(--ink);border:1.5px solid var(--ink);border-radius:24px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="padding:20px 24px;border-bottom:1px solid rgba(244,237,230,.12);display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(244,237,230,.45)">Operator console · Web</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--cream);margin-top:2px">True ROI, <span style="background:var(--lime);color:var(--ink);padding:0 .15em;border-radius:8px">live.</span></div>
+        </div>
+        <span style="font-size:12px;font-weight:700;background:var(--lime);color:var(--ink);padding:6px 14px;border-radius:999px;border:1.5px solid var(--lime)">● LIVE · 14:32</span>
+      </div>
+
+      <!-- Dashboard mock -->
+      <div style="flex:1;padding:16px 20px;display:flex;flex-direction:column;gap:12px">
+
+        <!-- URL bar -->
+        <div style="background:rgba(0,0,0,.35);border-radius:8px;padding:8px 14px;display:flex;align-items:center;gap:10px">
+          <div style="display:flex;gap:5px"><span style="width:9px;height:9px;border-radius:50%;background:var(--pink);display:block"></span><span style="width:9px;height:9px;border-radius:50%;background:var(--lime);display:block"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(244,237,230,.3);display:block"></span></div>
+          <span style="font-size:11px;color:rgba(244,237,230,.5);font-weight:500">app.klaim.uk/restaurants/dishoom-shoreditch · live</span>
+        </div>
+
+        <!-- KPI row -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+          <div style="background:var(--lime);border-radius:14px;padding:14px 16px"><div style="font-size:10px;font-weight:600;color:rgba(47,25,107,.65);text-transform:uppercase;letter-spacing:.06em">Covers driven</div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1">142</div><div style="font-size:11px;font-weight:600;color:rgba(47,25,107,.65);margin-top:2px">▲ 38% wow</div></div>
+          <div style="background:rgba(244,237,230,.07);border:1px solid rgba(244,237,230,.1);border-radius:14px;padding:14px 16px"><div style="font-size:10px;font-weight:600;color:rgba(244,237,230,.45);text-transform:uppercase;letter-spacing:.06em">Revenue</div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:800;color:var(--cream);letter-spacing:-.03em;line-height:1">£8,924</div><div style="font-size:11px;font-weight:600;color:rgba(244,237,230,.45);margin-top:2px">▲ 41% wow</div></div>
+          <div style="background:rgba(244,237,230,.07);border:1px solid rgba(244,237,230,.1);border-radius:14px;padding:14px 16px"><div style="font-size:10px;font-weight:600;color:rgba(244,237,230,.45);text-transform:uppercase;letter-spacing:.06em">ROAS</div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:800;color:var(--cream);letter-spacing:-.03em;line-height:1">5.2×</div><div style="font-size:11px;font-weight:600;color:rgba(244,237,230,.45);margin-top:2px">vs 1.4× Meta</div></div>
+          <div style="background:rgba(244,237,230,.07);border:1px solid rgba(244,237,230,.1);border-radius:14px;padding:14px 16px"><div style="font-size:10px;font-weight:600;color:rgba(244,237,230,.45);text-transform:uppercase;letter-spacing:.06em">Cost / cover</div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:800;color:var(--cream);letter-spacing:-.03em;line-height:1">£6.04</div><div style="font-size:11px;font-weight:600;color:rgba(244,237,230,.45);margin-top:2px">▼ £11.96 vs social</div></div>
+        </div>
+
+        <!-- Bar chart -->
+        <div style="background:rgba(244,237,230,.05);border:1px solid rgba(244,237,230,.1);border-radius:14px;padding:14px 16px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <span style="font-size:12px;font-weight:700;color:rgba(244,237,230,.7)">Covers · last 7 days</span>
+            <div style="display:flex;gap:12px;font-size:10px;font-weight:600"><span style="display:flex;align-items:center;gap:5px;color:rgba(244,237,230,.6)"><span style="width:9px;height:9px;border-radius:2px;background:var(--ink);border:1px solid rgba(244,237,230,.4);display:block"></span>Klaim</span><span style="display:flex;align-items:center;gap:5px;color:rgba(244,237,230,.6)"><span style="width:9px;height:9px;border-radius:2px;background:var(--lime);display:block"></span>Walk-in</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;height:70px;align-items:flex-end">
+            <div style="display:flex;flex-direction:column;gap:2px;height:100%;justify-content:flex-end"><div style="background:rgba(244,237,230,.5);border-radius:3px 3px 0 0;height:40%"></div><div style="background:var(--lime);border-radius:3px 3px 0 0;border:1px solid var(--ink);height:18%"></div><div style="font-size:9px;text-align:center;color:rgba(244,237,230,.4);margin-top:4px;font-weight:600">Mon</div></div>
+            <div style="display:flex;flex-direction:column;gap:2px;height:100%;justify-content:flex-end"><div style="background:rgba(244,237,230,.5);border-radius:3px 3px 0 0;height:32%"></div><div style="background:var(--lime);border-radius:3px 3px 0 0;border:1px solid var(--ink);height:22%"></div><div style="font-size:9px;text-align:center;color:rgba(244,237,230,.4);margin-top:4px;font-weight:600">Tue</div></div>
+            <div style="display:flex;flex-direction:column;gap:2px;height:100%;justify-content:flex-end"><div style="background:rgba(244,237,230,.5);border-radius:3px 3px 0 0;height:45%"></div><div style="background:var(--lime);border-radius:3px 3px 0 0;border:1px solid var(--ink);height:24%"></div><div style="font-size:9px;text-align:center;color:rgba(244,237,230,.4);margin-top:4px;font-weight:600">Wed</div></div>
+            <div style="display:flex;flex-direction:column;gap:2px;height:100%;justify-content:flex-end"><div style="background:rgba(244,237,230,.5);border-radius:3px 3px 0 0;height:55%"></div><div style="background:var(--lime);border-radius:3px 3px 0 0;border:1px solid var(--ink);height:30%"></div><div style="font-size:9px;text-align:center;color:rgba(244,237,230,.4);margin-top:4px;font-weight:600">Thu</div></div>
+            <div style="display:flex;flex-direction:column;gap:2px;height:100%;justify-content:flex-end"><div style="background:rgba(244,237,230,.85);border-radius:3px 3px 0 0;height:88%"></div><div style="background:var(--lime);border-radius:3px 3px 0 0;border:1px solid var(--ink);height:34%"></div><div style="font-size:9px;text-align:center;color:rgba(244,237,230,.4);margin-top:4px;font-weight:600">Fri</div></div>
+            <div style="display:flex;flex-direction:column;gap:2px;height:100%;justify-content:flex-end"><div style="background:rgba(244,237,230,.5);border-radius:3px 3px 0 0;height:72%"></div><div style="background:var(--lime);border-radius:3px 3px 0 0;border:1px solid var(--ink);height:38%"></div><div style="font-size:9px;text-align:center;color:rgba(244,237,230,.4);margin-top:4px;font-weight:600">Sat</div></div>
+            <div style="display:flex;flex-direction:column;gap:2px;height:100%;justify-content:flex-end"><div style="background:rgba(244,237,230,.5);border-radius:3px 3px 0 0;height:50%"></div><div style="background:var(--lime);border-radius:3px 3px 0 0;border:1px solid var(--ink);height:30%"></div><div style="font-size:9px;text-align:center;color:rgba(244,237,230,.4);margin-top:4px;font-weight:600">Sun</div></div>
+          </div>
+        </div>
+
+        <!-- Live feed -->
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="display:grid;grid-template-columns:40px 1fr auto auto;gap:12px;align-items:center;background:var(--lime);border-radius:10px;padding:10px 14px">
+            <div style="font-size:10px;font-weight:700;color:rgba(47,25,107,.6)">14:31</div>
+            <div><div style="font-size:12px;font-weight:700;color:var(--ink)">Sara R. <span style="font-size:10px;font-weight:500;color:rgba(47,25,107,.6)">· 3rd visit · Marylebone</span></div></div>
+            <div style="font-size:10px;font-weight:600;color:rgba(47,25,107,.65)">Table 7 · 2 covers</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:16px;font-weight:800;color:var(--ink)">£62.40</div>
+          </div>
+          <div style="display:grid;grid-template-columns:40px 1fr auto auto;gap:12px;align-items:center;background:rgba(244,237,230,.06);border:1px solid rgba(244,237,230,.1);border-radius:10px;padding:10px 14px">
+            <div style="font-size:10px;font-weight:700;color:rgba(244,237,230,.4)">13:48</div>
+            <div><div style="font-size:12px;font-weight:700;color:var(--cream)">Matt K. <span style="font-size:10px;font-weight:500;color:rgba(244,237,230,.5)">· new diner · Fitzrovia</span></div></div>
+            <div style="font-size:10px;font-weight:600;color:rgba(244,237,230,.5)">Table 12 · 4 covers</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:16px;font-weight:800;color:var(--cream)">£128.10</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  </div><!-- /end centred body -->
+  <div class="footbar"><div>07 / 15</div><div>iOS · Android · Web · This raise = GTM, not build</div></div>
+</section>
+
+<!-- ============== SLIDE 08 — UNIT ECONOMICS ============== -->
+<section class="cream-2" data-screen-label="08 Unit Economics" style="padding:64px 96px">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Business model · per verified cover</div>
+  </div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px;margin:24px 0">
+
+    <!-- Head row -->
+    <div style="display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:end;padding-bottom:24px;border-bottom:1.5px solid var(--ink)">
+      <div>
+        <span class="eyebrow">Unit economics · per verified cover</span>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:72px;font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink);margin-top:22px">£1.04 net · <span class="hl">69.3%</span> margin.</h2>
+      </div>
+      <p style="font-size:21px;line-height:1.45;font-weight:500;color:var(--muted);padding-bottom:6px">The restaurant funds a flat <strong style="color:var(--ink)">£10 per verified cover</strong> — and pays nothing until a real diner walks in, eats, and pays. The £1.50 platform fee is embedded; the diner just sees clean cash hit their bank.</p>
+    </div>
+
+    <!-- Follow-the-£10 flow -->
+    <div style="display:grid;grid-template-columns:.95fr auto 1.35fr;gap:24px;align-items:stretch">
+
+      <!-- SOURCE -->
+      <div style="background:var(--ink);border:1.5px solid var(--ink);border-radius:24px;padding:34px 32px;display:flex;flex-direction:column;justify-content:center;gap:10px">
+        <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(244,237,230,.5)">Restaurant funds</span>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:108px;font-weight:800;letter-spacing:-.05em;line-height:.82;color:var(--cream)">£10</div>
+        <div style="font-size:15px;font-weight:600;color:rgba(244,237,230,.7);line-height:1.4">per verified cover · fee embedded, no POS, no upfront spend</div>
+      </div>
+
+      <!-- arrow -->
+      <div style="display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-size:48px;font-weight:800;color:var(--muted)">→</div>
+
+      <!-- SPLIT -->
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <!-- diner -->
+        <div style="background:var(--lime);border:1.5px solid var(--ink);border-radius:20px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+          <div>
+            <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(47,25,107,.65)">Straight to diner's bank</div>
+            <div style="font-size:15px;font-weight:600;color:rgba(47,25,107,.78);margin-top:4px">Real cash via Faster Payments — not points</div>
+          </div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:56px;font-weight:800;letter-spacing:-.04em;line-height:.85;color:var(--ink);flex:none">£8.50</div>
+        </div>
+        <!-- klaim fee → net -->
+        <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:20px;padding:22px 26px;display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+            <div>
+              <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)">Klaim platform fee</div>
+              <div style="font-size:15px;font-weight:600;color:var(--muted);margin-top:4px">→ £2.00 on premium / featured drops</div>
+            </div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:.85;color:var(--ink);flex:none">£1.50</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;border-top:1px dashed rgba(47,25,107,.2);padding-top:14px">
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span style="font-size:12px;font-weight:600;color:var(--pink)">less Open Banking + payout API</span>
+              <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--pink)">(£0.46)</span>
+            </div>
+            <div style="background:var(--ink);border-radius:14px;padding:10px 16px;display:flex;flex-direction:column;gap:2px;justify-content:center">
+              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(244,237,230,.55)">Klaim net</span>
+              <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:30px;font-weight:800;letter-spacing:-.03em;color:var(--lime);line-height:.9">£1.04</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom comparison band -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+      <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:22px 26px;display:flex;align-items:baseline;gap:16px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:48px;font-weight:800;letter-spacing:-.04em;line-height:.85;color:var(--ink)">£10</div>
+        <div style="font-size:15px;font-weight:600;color:var(--muted);line-height:1.35">CAC per cover on Klaim vs <span style="color:var(--pink);font-weight:700">£30–£80</span> on paid social</div>
+      </div>
+      <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:22px 26px;display:flex;align-items:baseline;gap:16px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:48px;font-weight:800;letter-spacing:-.04em;line-height:.85;color:var(--ink)">100%</div>
+        <div style="font-size:15px;font-weight:600;color:var(--muted);line-height:1.35">of spend tied to a verified, completed cover — zero waste</div>
+      </div>
+      <div style="background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:22px 26px;display:flex;align-items:baseline;gap:16px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:48px;font-weight:800;letter-spacing:-.04em;line-height:.85;color:var(--ink)">£0.46</div>
+        <div style="font-size:15px;font-weight:600;color:var(--muted);line-height:1.35">all-in API cost — internal, like Monzo's interchange</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footbar"><div>08 / 15</div><div class="ref">Sources: Klaim Financial Model · GoCardless 2026 · TrueLayer 2026 · Finexer Buyer's Guide 2026</div></div>
+</section>
+
+<!-- ============== SLIDE 09 — FUNDRAISING ROADMAP ============== -->
+<section data-screen-label="09 KPI Gates">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Commercial roadmap</div>
+  </div>
+  <div class="body-area">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Gated on traction, not vision</span>
+        <h2 class="display-l" style="margin-top:24px">From £30K to <span class="hl">£8M+.</span></h2>
+      </div>
+      <p class="lede">Each round is gated on traction, not vision. The £30K bootstrap must hit its KPIs to unlock the £750K Pre-Seed — and so on up the staircase. Investors always see the milestone they're funding us toward, with revenue rising £96K → £525K → £2.3M → £9.45M.</p>
+    </div>
+    <div class="gates" style="grid-template-columns:repeat(4,1fr);gap:16px">
+      <div class="gate now" style="padding:28px 24px">
+        <div class="stage">Bootstrap · now</div>
+        <div class="raise" style="font-size:58px">£30K</div>
+        <div class="when">£1M pre · Jan 2027</div>
+        <div style="border-top:1.5px solid var(--ink);padding-top:14px;margin-top:8px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px">Unlocks Pre-Seed</div>
+          <ul style="font-size:15px">
+            <li>4,650 active users</li>
+            <li>420 venues · 42 brands</li>
+            <li>EBITDA-positive</li>
+            <li>£96K revenue run-rate</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gate next" style="padding:28px 24px">
+        <div class="stage">Pre-Seed · Jan 2028</div>
+        <div class="raise" style="font-size:58px">£750K</div>
+        <div class="when">£3.75M pre</div>
+        <div style="border-top:1.5px solid var(--ink);padding-top:14px;margin-top:8px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px">Unlocks Seed</div>
+          <ul style="font-size:15px">
+            <li>25K active users</li>
+            <li>650 venues · 65 brands</li>
+            <li>£525K revenue</li>
+            <li>46% analytics adoption</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gate next" style="padding:28px 24px">
+        <div class="stage">Seed · Jan 2029</div>
+        <div class="raise" style="font-size:58px">£2.5M</div>
+        <div class="when">£10M pre</div>
+        <div style="border-top:1.5px solid var(--ink);padding-top:14px;margin-top:8px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px">Unlocks Series A</div>
+          <ul style="font-size:15px">
+            <li>159K active users</li>
+            <li>1,500 venues · 150 brands</li>
+            <li>£2.3M revenue</li>
+            <li>70% SaaS adoption</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gate future" style="padding:28px 24px">
+        <div class="stage">Series A · Jan 2030</div>
+        <div class="raise" style="font-size:58px">£8M+</div>
+        <div class="when">£37.5M pre</div>
+        <div style="border-top:1.5px solid var(--lime);padding-top:14px;margin-top:8px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(244,237,230,.6);margin-bottom:8px">Use of funds</div>
+          <ul style="font-size:15px">
+            <li>National UK rollout</li>
+            <li>B2B data products</li>
+            <li>EU expansion via Yapily</li>
+            <li>637K users · £9.45M rev</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footbar"><div>09 / 15</div><div>Each round triggered on hard KPIs · transparent staircase</div></div>
+</section>
+
+<!-- ============== SLIDE 10 — THE ASK ============== -->
+<section class="ink" data-screen-label="10 The Ask" style="padding:64px 96px">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">The ask</div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px;margin:24px 0">
+    <div style="display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:end;padding-bottom:24px;border-bottom:1.5px solid rgba(244,237,230,.2)">
+      <div>
+        <span class="eyebrow">Friends &amp; Family · open now</span>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;letter-spacing:-.04em;line-height:.96;color:var(--cream);margin-top:22px">£30K is the<br/><span class="hl" style="white-space:nowrap">whole ask.</span></h2>
+      </div>
+      <p style="font-size:21px;line-height:1.45;font-weight:500;color:rgba(244,237,230,.78);padding-bottom:6px">The product is built and the founders take £0. £30K isn't a runway — it's the spark to prove London. We turn cash-positive in month 7 and the Pre-Seed scales from strength, not desperation.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:stretch">
+
+      <!-- LEFT: terms + why enough -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div style="background:var(--lime);border-radius:20px;padding:24px 26px">
+            <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(47,25,107,.65)">Raising</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:60px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:var(--ink);margin-top:8px">£30K</div>
+          </div>
+          <div style="background:rgba(244,237,230,.07);border:1px solid rgba(244,237,230,.14);border-radius:20px;padding:24px 26px">
+            <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(244,237,230,.5)">Pre-money</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:60px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:var(--cream);margin-top:8px">£1M</div>
+          </div>
+        </div>
+        <div style="background:rgba(244,237,230,.07);border:1px solid rgba(244,237,230,.14);border-radius:20px;padding:18px 26px;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:15px;font-weight:600;color:rgba(244,237,230,.7)">≈ 2.9% equity · SAFE · Jan 2027 close</span>
+          <span style="font-size:15px;font-weight:700;color:var(--lime)">London GTM only</span>
+        </div>
+        <div style="background:var(--lime);border-radius:20px;padding:16px 24px;display:flex;align-items:center;gap:16px">
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:800;letter-spacing:.04em;background:var(--ink);color:var(--lime);padding:8px 13px;border-radius:9px;flex:none">SEIS</span>
+          <span style="font-size:15px;font-weight:700;color:var(--ink);line-height:1.35">SEIS-eligible — UK investors can claim up to <strong>50% income tax relief</strong> on their stake.</span>
+        </div>
+        <!-- why enough -->
+        <div style="background:var(--cream);border-radius:20px;padding:24px 26px;display:flex;flex-direction:column;gap:14px;flex:1;justify-content:center">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">Why £30K is enough</div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="background:var(--ink);color:var(--lime);width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;margin-top:1px">✓</span><span style="font-size:16px;font-weight:600;color:var(--ink);line-height:1.4">App + operator console already shipped — <strong>zero build cost</strong></span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="background:var(--ink);color:var(--lime);width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;margin-top:1px">✓</span><span style="font-size:16px;font-weight:600;color:var(--ink);line-height:1.4">Four founders on <strong>£0 salary</strong> — equity only through 2027</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="background:var(--ink);color:var(--lime);width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;margin-top:1px">✓</span><span style="font-size:16px;font-weight:600;color:var(--ink);line-height:1.4">EBITDA-positive by month 7 — <strong>close 2027 with £39K</strong></span></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: use of funds -->
+      <div style="background:rgba(244,237,230,.05);border:1px solid rgba(244,237,230,.14);border-radius:22px;padding:30px 32px;display:flex;flex-direction:column;gap:20px">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(244,237,230,.5)">Where the £30K goes</div>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <!-- bar item -->
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:16px;font-weight:600;color:var(--cream)">Performance marketing &amp; influencer</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--lime)">45%</span></div>
+            <div style="height:12px;background:rgba(244,237,230,.1);border-radius:999px;overflow:hidden"><div style="width:45%;height:100%;background:var(--lime);border-radius:999px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:16px;font-weight:600;color:var(--cream)">Content, guerrilla &amp; PLG referrals</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--lime)">22%</span></div>
+            <div style="height:12px;background:rgba(244,237,230,.1);border-radius:999px;overflow:hidden"><div style="width:22%;height:100%;background:var(--lime);border-radius:999px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:16px;font-weight:600;color:var(--cream)">Tech infra &amp; AI outreach</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--lime)">20%</span></div>
+            <div style="height:12px;background:rgba(244,237,230,.1);border-radius:999px;overflow:hidden"><div style="width:20%;height:100%;background:var(--lime);border-radius:999px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:16px;font-weight:600;color:var(--cream)">FCA AR registration, legal &amp; T&amp;Cs</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--lime)">13%</span></div>
+            <div style="height:12px;background:rgba(244,237,230,.1);border-radius:999px;overflow:hidden"><div style="width:13%;height:100%;background:var(--lime);border-radius:999px"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:auto;border-top:1px solid rgba(244,237,230,.14);padding-top:18px;font-size:15px;font-weight:600;color:rgba(244,237,230,.7);line-height:1.5">Transaction revenue funds the rest from launch. <span style="color:var(--lime)">Next stop: £750K Pre-Seed at £3.75M pre, Jan 2028.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footbar"><div>10 / 15</div><div>Bootstrap to cash-positive · Pre-Seed unlocks Jan 2028</div></div>
+</section>
+
+<!-- ============== SLIDE 11 — THANK YOU ============== -->
+<section class="ink" data-screen-label="11 Thank You" style="position:relative;overflow:hidden">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Thank you</div>
+  </div>
+  <div class="body-area" style="justify-content:flex-end;max-width:60%;z-index:1">
+    <span class="eyebrow" style="font-size:21px;padding:13px 26px;align-self:flex-start">£30K Friends &amp; Family · open now</span>
+    <h2 class="display-l" style="margin-top:32px">Get paid to<br/><span class="hl" style="white-space:nowrap">eat out.</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,auto);gap:48px;margin-top:56px;align-items:start">
+      <div>
+        <div style="font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,230,.55);margin-bottom:14px">SEAN</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.02em">sean@klaim-app.com</div>
+      </div>
+      <div>
+        <div style="font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,230,.55);margin-bottom:14px">Marc</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.02em">marc@klaim-app.com</div>
+      </div>
+      <div>
+        <div style="font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,230,.55);margin-bottom:14px">Web</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.02em">klaim-app.com</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;right:80px;top:38px;transform:rotate(8deg) scale(0.9);transform-origin:center center;z-index:2">
+    <img src="klaim-app/phone.png" width="550" height="1004" alt="Klaim app — Drops screen" style="display:block" />
+  </div>
+  <div class="footbar"><div>11 / 15</div><div>Klaim UK Ltd · Registered in England · CONFIDENTIAL</div></div>
+</section>
+
+<!-- ============== SLIDE 12 — APPENDIX · COMPETITIVE ============== --><section data-screen-label="12 Appendix · Competitive">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Appendix · Competitive</div>
+  </div>
+  <div class="body-area">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Appendix · 1 of 4</span>
+        <h2 class="display-l" style="margin-top:24px">No-one in the UK<br/>does <span class="hl" style="white-space:nowrap">all five.</span></h2>
+      </div>
+      <p class="lede">EatClub (Marco Pierre White-backed) is the highest-profile London player — but it's a discount off the bill, not cash, with no gamification or social layer. Shuffle is closest on mechanics, yet North-only. Tastecard is the discount model we won't touch.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th></th><th>Real cash</th><th>No POS</th><th>Gamified drops</th><th>Social features</th><th>London focus</th></tr>
+        </thead>
+        <tbody>
+          <tr class="hi"><td><strong>Klaim</strong></td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Shuffle Rewards</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">Partial</td><td class="no">—</td><td class="no">North UK</td></tr>
+          <tr><td>JamDoughnut</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>EatClub</td><td class="no">Discount</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Tastecard</td><td class="no">Discount</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Yonder</td><td class="no">Points</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footbar"><div>12 / 15</div><div class="ref">Competitive matrix · Klaim research, May 2026</div></div>
+</section>
+
+<!-- ============== SLIDE 12 — REVENUE STREAMS ============== -->
+<section class="cream-2" data-screen-label="13 Revenue Streams">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Appendix · Revenue</div>
+  </div>
+  <div class="body-area">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Appendix · 2 of 4</span>
+        <h2 class="display-l" style="margin-top:24px">Four streams · <span class="hl">SaaS</span> shifts the multiple.</h2>
+      </div>
+      <p class="lede">Transactions are the engine. The Analytics SaaS upsell shifts the valuation multiple at Series A — proven SaaS adoption &gt;30% of brands is the gate.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+      <div class="card lime">
+        <span class="chip dark">Y1+ · Core</span>
+        <h3 style="font-size:34px">Transaction fee</h3>
+        <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;letter-spacing:-.04em;line-height:.9">£1.50<small style="font-family:'Inter';font-size:15px;font-weight:500;display:block;margin-top:10px">→ £2.00 at scale</small></p>
+        <p class="body" style="color:rgba(47,25,107,.7);margin-top:auto;font-size:17px">Per verified cover. The volume engine.</p>
+      </div>
+      <div class="card">
+        <span class="chip">Y1+ · SaaS</span>
+        <h3 style="font-size:34px">Analytics</h3>
+        <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;letter-spacing:-.04em;line-height:.9">£299–599<small style="font-family:'Inter';font-size:15px;font-weight:500;display:block;margin-top:10px;color:var(--muted)">/ brand / month</small></p>
+        <p class="body" style="color:var(--muted);margin-top:auto;font-size:17px">Cohorts, repeat rates, competitor benchmarks. Multi-site one-bill.</p>
+      </div>
+      <div class="card">
+        <span class="chip">Y2+</span>
+        <h3 style="font-size:34px">Sponsored drops</h3>
+        <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;letter-spacing:-.04em;line-height:.9">£500–2K<small style="font-family:'Inter';font-size:15px;font-weight:500;display:block;margin-top:10px;color:var(--muted)">/ placement</small></p>
+        <p class="body" style="color:var(--muted);margin-top:auto;font-size:17px">Premium placement for new openings &amp; campaigns.</p>
+      </div>
+      <div class="card ink">
+        <span class="chip" style="background:var(--lime);border-color:var(--lime)">Y3+</span>
+        <h3 style="font-size:34px;color:var(--cream)">Data products</h3>
+        <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;letter-spacing:-.04em;line-height:.9;color:var(--lime)">B2B<small style="font-family:'Inter';font-size:15px;font-weight:500;display:block;margin-top:10px;color:rgba(244,237,230,.6)">licensed</small></p>
+        <p class="body" style="color:rgba(244,237,230,.78);margin-top:auto;font-size:17px">Anonymised dining intelligence for prop. firms &amp; FMCG.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footbar"><div>13 / 15</div><div>Year-by-year unlock · capital efficient</div></div>
+</section>
+
+<!-- ============== SLIDE 13 — TEAM ============== -->
+<section data-screen-label="14 Team">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Appendix · Team</div>
+  </div>
+  <div class="body-area">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Appendix · 3 of 4</span>
+        <h2 class="display-l" style="margin-top:24px">Six people. <span class="hl">£0 salaries.</span></h2>
+      </div>
+      <p class="lede">The entire 2027 team runs on equity, not cash — four founders plus two GTM leads. No salary line until the Pre-Seed lands in Jan 2028. Maximum skin in the game, minimum burn.</p>
+    </div>
+    <div class="team-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="team-card hi">
+        <div class="when">Co-Founder · equity only</div>
+        <div class="role">GTM, Strategy &amp; Product</div>
+        <div class="who">Sean Trevaskis</div>
+        <p class="body" style="font-size:13px;color:rgba(47,25,107,.7);margin-top:auto">Strategy, fundraising, press &amp; brand partnerships.</p>
+      </div>
+      <div class="team-card hi">
+        <div class="when">Co-Founder · equity only</div>
+        <div class="role">GTM, Strategy &amp; Data</div>
+        <div class="who">Marc</div>
+        <p class="body" style="font-size:13px;color:rgba(47,25,107,.7);margin-top:auto">Finance, restaurant &amp; user acquisition, runway.</p>
+      </div>
+      <div class="team-card hi">
+        <div class="when">Co-Founder · equity only</div>
+        <div class="role">Engineering</div>
+        <div class="who">Cengo</div>
+        <p class="body" style="font-size:13px;color:rgba(47,25,107,.7);margin-top:auto">Open Banking, app performance, merchant portal.</p>
+      </div>
+      <div class="team-card hi">
+        <div class="when">Co-Founder · equity only</div>
+        <div class="role">Engineering</div>
+        <div class="who">Yunus</div>
+        <p class="body" style="font-size:13px;color:rgba(47,25,107,.7);margin-top:auto">Backend, transaction detection, payout API.</p>
+      </div>
+      <div class="team-card">
+        <div class="when">Equity only</div>
+        <div class="role">GTM Lead 1</div>
+        <div class="who">Founding team</div>
+        <p class="body" style="font-size:13px;color:var(--muted);margin-top:auto">Performance marketing, social, influencer.</p>
+      </div>
+      <div class="team-card">
+        <div class="when">Equity only</div>
+        <div class="role">GTM Lead 2</div>
+        <div class="who">Founding team</div>
+        <p class="body" style="font-size:13px;color:var(--muted);margin-top:auto">Restaurant outreach, onboarding, community.</p>
+      </div>
+    </div>
+    <p class="body" style="color:var(--muted);margin-top:24px;font-size:14px">+ CTO Advisor &amp; part-time legal/accounting. Salaries begin Jan 2028 post-Pre-Seed (founders £75K, engineers £62.6K, GTM £45.5K) — benchmarked to SeedLegals 2025. Team grows to 8 in 2028.</p>
+  </div>
+  <div class="footbar"><div>14 / 15</div><div>Lean by design · founder network = warm B2B pipeline</div></div>
+</section>
+
+<!-- ============== SLIDE 15 — SWOT / RISK ============== -->
+<section data-screen-label="15 SWOT · Risk">
+  <div class="topbar">
+    <div class="logo"><span class="mark">K</span> Klaim</div>
+    <div class="meta">Appendix · Risk</div>
+  </div>
+  <div class="body-area">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Appendix · 4 of 4</span>
+        <h2 class="display-l" style="margin-top:24px">What could go wrong  &amp; how we mitigate.</h2>
+      </div>
+      <p class="lede">A two-sided marketplace dies on cold-start, not on competition. Our mitigation is a supply-led launch — 30–50 premium venues locked before any consumer marketing.</p>
+    </div>
+    <div class="swot">
+      <div class="swot-card s">
+        <div class="lab">Strengths</div>
+        <h4>Moats from day one</h4>
+        <ul>
+          <li>Zero POS — kills the #1 B2B objection</li>
+          <li>Founder network · Growdash relationships unlock premium UK groups</li>
+          <li>App + dashboard already built — no tech execution risk in this round</li>
+        </ul>
+      </div>
+      <div class="swot-card w">
+        <div class="lab">Weaknesses</div>
+        <h4>Where we're sensitive</h4>
+        <ul>
+          <li>Margin sensitivity to Open Banking API pricing (TrueLayer / GoCardless)</li>
+          <li>B2C CAC in London is expensive if Drop Buddies viral loop fails</li>
+        </ul>
+      </div>
+      <div class="swot-card o">
+        <div class="lab">Opportunities</div>
+        <h4>Compounding upside</h4>
+        <ul>
+          <li>claim.co exit precedent — proven mechanic, proven outcome</li>
+          <li>SaaS Analytics shifts the multiple at Series A</li>
+          <li>EU expansion via single-API providers (Yapily)</li>
+        </ul>
+      </div>
+      <div class="swot-card t">
+        <div class="lab">Threats — &amp; mitigations</div>
+        <h4>Three scenarios we plan for</h4>
+        <ul>
+          <li><strong>Cold-start:</strong> supply-led launch, 30+ venues before any user marketing</li>
+          <li><strong>Restaurant churn:</strong> drop-boost low-volume partners to deliver guaranteed footfall</li>
+          <li><strong>Bank-link friction:</strong> lean hard on FCA &amp; bank-grade messaging</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footbar"><div>15 / 15</div><div>Every weakness has a contingency · honest assessment</div></div>
+</section>
+
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "Klaim Family & Friends Deck";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  @page { margin: 0.5cm; }\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks, whose
+  // slides are sized to the page.
+  try {
+    if (!document.querySelector('deck-stage')) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a body padding inset only when we also zero the
+      // @page margin; computed style can't tell us (it reports screen media),
+      // so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /body\s*\{[^}]*padding/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

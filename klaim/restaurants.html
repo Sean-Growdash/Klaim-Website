@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Klaim · For restaurants — Fill tables, not feeds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" />
+<style>
+  :root{
+    --ink:#2F196B;
+    --ink-deep:#1F0F4A;
+    --lime:#C7FF4F;
+    --cream:#F4EDE6;
+    --cream-2:#EDE5DC;
+    --pink:#FF6B9D;
+    --white:#FFFFFF;
+    --muted:rgba(47,25,107,.65);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1380px;margin:0 auto;padding:0 40px}
+  .display{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.04em;line-height:.92}
+  .hl{display:inline-block;background:var(--lime);color:var(--ink);padding:0 .15em;border-radius:14px}
+
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(244,237,230,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(47,25,107,.08)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1380px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.04em}
+  .logo .mark{width:38px;height:38px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--lime);font-weight:800;font-size:20px}
+  .nav-links{display:flex;gap:32px;font-size:15px;font-weight:500;color:var(--ink)}
+  .nav-links a{opacity:.75}
+  .nav-links a:hover{opacity:1}
+  .pill-btn{padding:12px 22px;border-radius:999px;font-weight:600;font-size:14px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;transition:transform .15s}
+  .pill-btn.solid{background:var(--ink);color:var(--lime)}
+  .pill-btn.lime{background:var(--lime);color:var(--ink)}
+  .pill-btn:hover{transform:translateY(-2px)}
+  .pill-btn.lg{padding:18px 32px;font-size:16px}
+
+  .hero{padding:60px 0 100px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--lime);color:var(--ink);border-radius:999px;font-size:13px;font-weight:600;border:1.5px solid var(--ink)}
+  h1.hero-title{margin-top:24px;font-size:clamp(56px,8.5vw,140px);max-width:1100px}
+  h1 .strike{position:relative;display:inline-block}
+  h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:55%;height:8px;background:var(--pink);transform:rotate(-3deg)}
+  .hero-sub{margin-top:32px;font-size:21px;line-height:1.45;max-width:680px;color:var(--muted);font-weight:500}
+  .hero-actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+
+  .compare{margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .card-c{padding:40px;border-radius:24px;border:1.5px solid var(--ink);position:relative}
+  .card-c.bad{background:var(--white)}
+  .card-c.bad::before{content:"The old way 😬";position:absolute;top:-14px;left:24px;background:var(--pink);color:var(--ink);font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;border:1.5px solid var(--ink)}
+  .card-c.good{background:var(--ink);color:var(--cream)}
+  .card-c.good::before{content:"Klaim ★";position:absolute;top:-14px;left:24px;background:var(--lime);color:var(--ink);font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;border:1.5px solid var(--ink)}
+  .card-c h3{margin-top:14px;font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:700;letter-spacing:-.03em;line-height:1.05}
+  .card-c .stat-big{margin-top:24px;font-family:'Bricolage Grotesque',sans-serif;font-size:96px;font-weight:800;line-height:.9;letter-spacing:-.04em}
+  .card-c.bad .stat-big{color:var(--pink)}
+  .card-c.good .stat-big{color:var(--lime)}
+  .card-c .stat-l{font-size:13px;color:var(--muted);font-weight:600;margin-top:4px}
+  .card-c.good .stat-l{color:rgba(244,237,230,.6)}
+  .card-c ul{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:12px}
+  .card-c li{font-size:15px;display:flex;gap:12px;font-weight:500;line-height:1.4}
+  .card-c.bad li::before{content:"✗";color:var(--pink);font-weight:700}
+  .card-c.good li::before{content:"✓";color:var(--lime);font-weight:700}
+
+  section{padding:88px 0}
+  .sec-cream-2{background:var(--cream-2)}
+  .sec-ink{background:var(--ink);color:var(--cream)}
+  .sec-lime{background:var(--lime);color:var(--ink)}
+
+  .sec-eye{display:inline-block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:20px;text-transform:uppercase;letter-spacing:.12em;padding:6px 12px;background:var(--cream);border:1.5px solid var(--ink);border-radius:999px}
+  .sec-cream-2 .sec-eye{background:var(--white)}
+  .sec-ink .sec-eye{color:var(--lime);background:transparent;border-color:var(--lime)}
+  .sec-head{display:grid;grid-template-columns:1.15fr .85fr;gap:36px 64px;align-items:end;margin-bottom:56px;padding-bottom:28px;border-bottom:1.5px solid var(--ink)}
+  .sec-ink .sec-head{border-bottom-color:rgba(244,237,230,.2)}
+  .sec-head h2{font-size:clamp(44px,5.6vw,92px);line-height:.95;margin-top:0}
+  .sec-head .lede{font-size:18px;line-height:1.55;color:var(--muted);max-width:480px;font-weight:500;justify-self:end;padding-bottom:12px}
+  .sec-ink .sec-head .lede{color:rgba(244,237,230,.75)}
+  @media (max-width:900px){.sec-head{grid-template-columns:1fr;gap:24px;padding-bottom:24px;margin-bottom:48px}.sec-head .lede{justify-self:start;max-width:none}}
+
+  /* DASHBOARD */
+  .dash{border:1.5px solid var(--ink);border-radius:24px;background:var(--white);overflow:hidden;box-shadow:0 30px 80px -30px rgba(47,25,107,.4)}
+  .dash-bar{background:var(--ink);padding:14px 20px;display:flex;align-items:center;gap:14px;color:var(--cream)}
+  .dash-bar .dots{display:flex;gap:6px}
+  .dash-bar .dots span{width:11px;height:11px;border-radius:50%;background:rgba(244,237,230,.3)}
+  .dash-bar .dots span:first-child{background:var(--pink)}
+  .dash-bar .dots span:nth-child(2){background:var(--lime)}
+  .dash-bar .url{font-size:13px;color:rgba(244,237,230,.7);margin-left:8px;font-weight:500}
+  .dash-body{padding:32px}
+  .dash-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+  .dash-h h3{font-family:'Bricolage Grotesque',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.03em}
+  .dash-h .badge{font-size:11px;font-weight:700;background:var(--lime);color:var(--ink);padding:6px 12px;border-radius:999px;border:1.5px solid var(--ink)}
+  .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .kpi{padding:20px;border-radius:16px;border:1.5px solid var(--ink);background:var(--cream-2)}
+  .kpi.hi{background:var(--lime)}
+  .kpi .l{font-size:11px;font-weight:600;color:var(--muted)}
+  .kpi .v{margin-top:6px;font-family:'Bricolage Grotesque',sans-serif;font-size:36px;font-weight:700;line-height:1;letter-spacing:-.03em}
+  .kpi .d{margin-top:6px;font-size:11px;color:var(--ink);font-weight:600}
+  .chart{padding:24px;border-radius:16px;border:1.5px solid var(--ink);background:var(--cream);margin-bottom:20px}
+  .chart-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;font-size:13px;font-weight:700}
+  .chart-h .leg{display:flex;gap:14px;font-size:11px;font-weight:600}
+  .chart-h .leg span{display:flex;align-items:center;gap:6px}
+  .chart-h .leg .sw{width:10px;height:10px;border-radius:3px}
+  .bars{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;height:140px;align-items:flex-end}
+  .bar-col{display:flex;flex-direction:column;gap:2px;height:100%;justify-content:flex-end}
+  .bar-col .b1{background:var(--ink);border-radius:4px 4px 0 0}
+  .bar-col .b2{background:var(--lime);border-radius:4px 4px 0 0;border:1px solid var(--ink)}
+  .bar-col .lab{font-size:10px;text-align:center;color:var(--muted);margin-top:6px;font-weight:600}
+  .feed-list{display:flex;flex-direction:column;gap:8px}
+  .feed{display:grid;grid-template-columns:auto 1fr auto auto;gap:14px;align-items:center;padding:14px 16px;background:var(--cream-2);border:1px solid var(--ink);border-radius:12px;font-size:13px}
+  .feed .t{font-size:11px;color:var(--ink);font-weight:700}
+  .feed .who{font-weight:700}
+  .feed .who .meta{font-size:11px;color:var(--muted);font-weight:500}
+  .feed .table{font-size:11px;color:var(--muted);font-weight:600}
+  .feed .amt{font-family:'Bricolage Grotesque',sans-serif;font-size:18px;color:var(--ink);font-weight:700}
+
+  /* WHY GRID */
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .why-card{padding:36px 30px;border-radius:24px;border:1.5px solid var(--ink);background:var(--white);min-height:300px;display:flex;flex-direction:column;gap:18px;transition:transform .2s}
+  .why-card:hover{transform:translateY(-4px)}
+  .why-card.hi{background:var(--lime)}
+  .why-card.alt{background:var(--ink);color:var(--cream)}
+  .why-card.alt2{background:var(--pink);color:var(--ink)}
+  .why-card .num{font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+  .why-card.alt .num{color:rgba(244,237,230,.6)}
+  .why-card .ic{width:58px;height:58px;border:1.5px solid currentColor;border-radius:18px;display:flex;align-items:center;justify-content:center;color:var(--ink);background:rgba(255,255,255,.24)}
+  .why-card.alt .ic{color:var(--lime);background:rgba(199,255,79,.08)}
+  .why-card .ic svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .why-card .ic .fill{fill:currentColor;stroke:none}
+  .why-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+  .why-card p{font-size:15px;line-height:1.5;font-weight:500;color:var(--muted)}
+  .why-card.alt p{color:rgba(244,237,230,.78)}
+  .why-card.hi p,.why-card.alt2 p{color:rgba(47,25,107,.78)}
+
+  /* ROI */
+  .roi{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:stretch}
+  .roi-controls{padding:40px;border-radius:24px;border:1.5px solid var(--ink);background:var(--white);display:flex;flex-direction:column;justify-content:space-between;height:100%}
+  .roi-controls .control:last-child{margin-bottom:0}
+  .control{margin-bottom:28px}
+  .control label{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;margin-bottom:12px;font-weight:600}
+  .control label .v{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+  .control input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:6px;background:var(--cream-2);border-radius:999px;outline:none;border:1px solid var(--ink)}
+  .control input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--lime);cursor:pointer;border:1.5px solid var(--ink)}
+  .control input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--lime);cursor:pointer;border:1.5px solid var(--ink)}
+  .control .hint{margin-top:6px;font-size:11px;color:var(--muted);font-weight:500}
+  .roi-out{padding:40px;border-radius:24px;background:var(--ink);color:var(--cream);height:100%;display:flex;flex-direction:column}
+  .roi-out .l{font-size:13px;color:var(--lime);margin-bottom:20px;font-weight:600}
+  .roi-out .big{font-family:'Bricolage Grotesque',sans-serif;font-size:96px;font-weight:800;line-height:.9;color:var(--lime);letter-spacing:-.04em}
+  .roi-out .big small{font-size:14px;color:rgba(244,237,230,.7);font-weight:500;display:block;margin-top:10px;font-family:'Inter';letter-spacing:0}
+  .roi-grid{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:36px 32px;border-top:1px solid rgba(244,237,230,.15);padding-top:36px;flex:1}
+  .roi-stat{display:flex;flex-direction:column;justify-content:center}
+  .roi-stat .k{font-size:13px;color:rgba(244,237,230,.6);font-weight:600;letter-spacing:.02em}
+  .roi-stat .v{font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:700;line-height:1;margin-top:12px;letter-spacing:-.04em}
+
+  /* CASE */
+  .case{padding:60px;border-radius:32px;background:var(--lime);color:var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;border:1.5px solid var(--ink)}
+  .case q{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:32px;line-height:1.2;letter-spacing:-.03em;font-weight:700;quotes:none}
+  .case .who{margin-top:36px;display:flex;align-items:center;gap:14px;border-top:1.5px solid var(--ink);padding-top:24px}
+  .case .who .av{width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--lime);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+  .case .who .n{font-weight:700;font-size:16px}
+  .case .who .m{font-size:12px;color:var(--muted);font-weight:500}
+  .case-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .case-stat{padding:24px;border-radius:18px;background:var(--white);border:1.5px solid var(--ink)}
+  .case-stat .l{font-size:11px;color:var(--muted);font-weight:600}
+  .case-stat .v{font-family:'Bricolage Grotesque',sans-serif;font-size:48px;font-weight:800;color:var(--ink);line-height:.9;margin-top:8px;letter-spacing:-.03em}
+  .case-stat .d{font-size:12px;color:var(--muted);margin-top:4px;font-weight:500}
+
+  /* ONB */
+  .onb{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .onb-step{padding:36px;border-radius:24px;border:1.5px solid var(--ink);background:var(--white);min-height:280px}
+  .onb-step:nth-child(2){background:var(--lime)}
+  .onb-step:nth-child(3){background:var(--ink);color:var(--cream)}
+  .onb-step .num{font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;line-height:.9;color:var(--ink);letter-spacing:-.04em}
+  .onb-step:nth-child(3) .num{color:var(--lime)}
+  .onb-step h3{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:700;letter-spacing:-.02em;margin-top:16px;line-height:1.1}
+  .onb-step p{margin-top:14px;font-size:15px;line-height:1.5;font-weight:500;color:var(--muted)}
+  .onb-step:nth-child(3) p{color:rgba(244,237,230,.78)}
+
+  /* PRICING */
+  .pricing{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+  .price-card{padding:48px;border-radius:24px;border:1.5px solid var(--ink);background:var(--white);display:flex;flex-direction:column;height:100%}
+  .price-card ul{flex:1}
+  .price-card.featured{background:var(--ink);color:var(--cream)}
+  .price-card .tier{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .price-card.featured .tier{color:var(--lime)}
+  .price-card h3{margin-top:12px;font-family:'Bricolage Grotesque',sans-serif;font-size:34px;font-weight:700;letter-spacing:-.03em;line-height:1.05}
+  .price-card .price{margin-top:24px;font-family:'Bricolage Grotesque',sans-serif;font-size:96px;font-weight:800;line-height:.85;letter-spacing:-.04em;display:block}
+  .price-card.featured .price{color:var(--lime)}
+  .price-card .price-sub{font-family:'Inter',sans-serif;font-size:14px;display:block;margin-top:14px;font-weight:500;color:var(--muted);letter-spacing:0;line-height:1.4}
+  .price-card.featured .price-sub{color:rgba(244,237,230,.7)}
+  .price-card ul{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:12px}
+  .price-card li{font-size:14px;display:flex;gap:12px;font-weight:500;line-height:1.4}
+  .price-card li::before{content:"✓";color:var(--ink);font-weight:700;background:var(--lime);width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px;border:1.5px solid var(--ink)}
+  .price-card.featured li::before{background:var(--lime);color:var(--ink)}
+  .price-card .cta{margin-top:28px}
+
+  /* FAQ */
+  .faq-list{display:flex;flex-direction:column;border-top:1.5px solid var(--ink)}
+  details{border-bottom:1.5px solid var(--ink);padding:28px 0;cursor:pointer}
+  details summary{display:flex;justify-content:space-between;align-items:center;list-style:none;font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.3;gap:24px}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:32px;font-weight:600;color:var(--ink);background:var(--lime);width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;line-height:0;border:1.5px solid var(--ink);transition:transform .2s;flex-shrink:0}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:18px;font-size:17px;line-height:1.55;max-width:780px;color:var(--muted);font-weight:500}
+
+  /* FINAL */
+  .final{background:var(--ink);color:var(--cream);text-align:center;padding:160px 0}
+  .final h2{font-size:clamp(64px,11vw,180px);text-wrap:balance}
+  .final h2 .hl{background:var(--lime);color:var(--ink)}
+  .final p{margin-top:32px;font-size:21px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.45;color:rgba(244,237,230,.78);font-weight:500}
+  .final .final-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--cream);color:var(--ink);border:1.5px solid var(--lime);border-radius:999px;padding:12px 24px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 0 0 6px rgba(199,255,79,.08)}
+  .final .actions{margin-top:48px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .final .pill-btn{border-color:var(--cream);color:var(--cream)}
+  .final .pill-btn.lime{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+  .final small{display:block;margin-top:32px;font-size:13px;color:rgba(244,237,230,.6);font-weight:500}
+
+  footer{background:var(--ink-deep);color:var(--cream);padding:80px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+  .foot-grid h4{font-size:13px;font-weight:700;color:var(--lime);margin-bottom:18px;letter-spacing:.04em;text-transform:uppercase}
+  .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px;color:rgba(244,237,230,.7);font-weight:500}
+  .foot-bot{border-top:1px solid rgba(244,237,230,.1);padding-top:32px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(244,237,230,.5)}
+
+  @media (max-width:1100px){
+    .compare,.roi,.case,.pricing{grid-template-columns:1fr}
+    .why,.onb,.kpi-row{grid-template-columns:1fr 1fr}
+    .nav-links{display:none}
+    /* sec-head handled by 900px MQ above */
+  }
+  @media (max-width:680px){
+    .container{padding:0 24px}
+    .why,.onb,.kpi-row,.foot-grid,.case-stats{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body data-screen-label="Restaurants">
+
+<nav class="top">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="mark">K</span> Klaim · for restaurants</a>
+    <div class="nav-links">
+      <a href="#why">Why Klaim</a>
+      <a href="#dash">Dashboard</a>
+      <a href="#roi">ROI calculator</a>
+      <a href="#how">How</a>
+    </div>
+    <div style="display:flex;gap:10px">
+      <a href="diners.html" class="pill-btn">For diners</a>
+      <a href="#book" class="pill-btn solid">Book a demo</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <h1 class="hero-title display" style="margin-top:0">Stop boosting <span class="strike">posts.</span><br/>Start filling <span class="hl">tables.</span></h1>
+    <p class="hero-sub">Paid social spent £18 to fill one cover last month. Klaim does it for £6 — and gives you the receipt. Literally. You only pay when a real diner walks in, taps a card, eats. <em>That's</em> the deal.</p>
+    <div class="hero-actions">
+      <a href="#book" class="pill-btn lime lg">Book a 15-min demo →</a>
+      <a href="#roi" class="pill-btn lg">Try the ROI calculator</a>
+    </div>
+
+    <div class="compare">
+      <div class="card-c bad">
+        <h3>Boost the post.<br/>Cross your fingers.</h3>
+        <div class="stat-big">£18</div>
+        <div class="stat-l">Per attributed cover · Q1 2026 avg</div>
+        <ul>
+          <li>Pay upfront, hope someone shows</li>
+          <li>"Reach" and "impressions" don't pay rent</li>
+          <li>Your CAC is whatever Instagram says it is</li>
+          <li>Can't tell paid traffic from organic</li>
+          <li>Same boosted carousel as everyone else</li>
+        </ul>
+      </div>
+      <div class="card-c good">
+        <h3>Diner walks in.<br/>Then we charge you.</h3>
+        <div class="stat-big">£6</div>
+        <div class="stat-l">Per attributed cover · Klaim avg</div>
+        <ul>
+          <li>Pay only on tracked, completed covers</li>
+          <li>Real receipts. Real cards. Real ROAS.</li>
+          <li>Set your max — we don't go a quid over</li>
+          <li>Data lives in your dashboard, not Meta's</li>
+          <li>Premium Gen-Z audience by default</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="why">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">The pitch</div>
+        <h2 class="display">Six reasons you're switching by <span class="hl">June.</span></h2>
+      </div>
+      <p class="lede">Not "another channel". Fundamentally different unit economics — pay-per-cover, not pay-per-click. Pay-per-actual-bum-on-actual-seat.</p>
+    </div>
+    <div class="why">
+      <div class="why-card hi">
+        <div class="num">01</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <path d="M6 25V8M6 25h20"/>
+            <path d="M11 21v-5M16 21v-9M21 21v-13"/>
+            <path d="M10 11l5 3 8-7"/>
+            <path d="M21 7h2.8v2.8"/>
+          </svg>
+        </div>
+        <h3>True ROI tracking</h3>
+        <p>Every Klaim cover comes with a real card transaction. No pixel guesswork, no "estimated reach", no asterisks. It happened or it didn't.</p>
+      </div>
+      <div class="why-card alt">
+        <div class="num">02</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="6" y="8" width="20" height="16" rx="3"/>
+            <path d="M6 13h20M11 19h7"/>
+            <circle class="fill" cx="22" cy="19" r="1.7"/>
+          </svg>
+        </div>
+        <h3>Pay only on covers</h3>
+        <p>Set your monthly cap, set your max per-cover. We never charge you a quid more, and we never charge for empty seats. The bill is the bill.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">03</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="9"/>
+            <circle cx="16" cy="16" r="4"/>
+            <path d="M16 3v4M16 25v4M3 16h4M25 16h4"/>
+          </svg>
+        </div>
+        <h3>Premium Gen-Z audience</h3>
+        <p>Klaimers are 22-34, central London, dispose of £600+/mo on eating out. Not a discount-hunter crowd — a "we'll try anywhere good" crowd.</p>
+      </div>
+      <div class="why-card alt2">
+        <div class="num">04</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="6" y="8" width="20" height="18" rx="3"/>
+            <path d="M10 5v6M22 5v6M6 14h20"/>
+            <path d="M11 19h3M18 19h3M11 23h3"/>
+            <rect x="18" y="21" width="5" height="3" rx="1" class="fill"/>
+          </svg>
+        </div>
+        <h3>Fill your dead nights</h3>
+        <p>Weight your offers towards Mon/Tue/Wed and watch your covers smooth out. Dynamic cashback per service — Friday at full price, Monday with a kicker.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">05</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <circle cx="10" cy="12" r="3"/>
+            <circle cx="22" cy="12" r="3"/>
+            <circle cx="16" cy="23" r="3"/>
+            <path d="M13 12h6M20.5 14.5L17.5 20M11.5 14.5l3 5.5"/>
+          </svg>
+        </div>
+        <h3>Real cohort data</h3>
+        <p>See who comes back, what they spend on the second visit, your true LTV. The kind of data your DSP "doesn't have access to right now".</p>
+      </div>
+      <div class="why-card hi">
+        <div class="num">06</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="8" y="7" width="16" height="19" rx="3"/>
+            <path d="M12 12h8M12 16h8M12 20h5"/>
+            <path d="M24 8l3-3M25 15h4M24 22l3 3"/>
+          </svg>
+        </div>
+        <h3>Nothing at the till</h3>
+        <p>No integrations, no QR codes, no awkward chat with the waiter. We match diners' card transactions to your venue — nothing plugs into your till, your EPOS, or your team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dash" class="sec-cream-2">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">The operator console</div>
+        <h2 class="display">Your dashboard. Finally <span class="hl">honest.</span></h2>
+      </div>
+      <p class="lede">Every cover attributed to Klaim, every quid spent, every diner who came back. Zero "estimated" anything. If it's in the dashboard, it happened.</p>
+    </div>
+
+    <div class="dash">
+      <div class="dash-bar">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="url">app.klaim.uk/restaurants/dishoom-shoreditch · live</div>
+      </div>
+      <div class="dash-body">
+        <div class="dash-h">
+          <h3>This week · 26 Apr — 02 May</h3>
+          <span class="badge">● LIVE · 02 May 14:32</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi hi">
+            <div class="l">Covers driven</div>
+            <div class="v">142</div>
+            <div class="d">▲ 38% wow</div>
+          </div>
+          <div class="kpi">
+            <div class="l">Attributed revenue</div>
+            <div class="v">£8,924</div>
+            <div class="d">▲ 41% wow</div>
+          </div>
+          <div class="kpi">
+            <div class="l">ROAS</div>
+            <div class="v">5.2×</div>
+            <div class="d">▲ vs 1.4× Meta</div>
+          </div>
+          <div class="kpi">
+            <div class="l">Cost / cover</div>
+            <div class="v">£6.04</div>
+            <div class="d">▼ £11.96 vs paid social</div>
+          </div>
+        </div>
+
+        <div class="chart">
+          <div class="chart-h">
+            <span>Covers · last 7 days</span>
+            <div class="leg">
+              <span><span class="sw" style="background:var(--ink)"></span>Klaim</span>
+              <span><span class="sw" style="background:var(--lime)"></span>Walk-in</span>
+            </div>
+          </div>
+          <div class="bars">
+            <div class="bar-col"><div class="b1" style="height:40%"></div><div class="b2" style="height:18%"></div><div class="lab">Mon</div></div>
+            <div class="bar-col"><div class="b1" style="height:32%"></div><div class="b2" style="height:22%"></div><div class="lab">Tue</div></div>
+            <div class="bar-col"><div class="b1" style="height:45%"></div><div class="b2" style="height:24%"></div><div class="lab">Wed</div></div>
+            <div class="bar-col"><div class="b1" style="height:55%"></div><div class="b2" style="height:30%"></div><div class="lab">Thu</div></div>
+            <div class="bar-col"><div class="b1" style="height:88%"></div><div class="b2" style="height:34%"></div><div class="lab">Fri</div></div>
+            <div class="bar-col"><div class="b1" style="height:72%"></div><div class="b2" style="height:38%"></div><div class="lab">Sat</div></div>
+            <div class="bar-col"><div class="b1" style="height:50%"></div><div class="b2" style="height:30%"></div><div class="lab">Sun</div></div>
+          </div>
+        </div>
+
+        <div class="feed-list">
+          <div class="feed">
+            <div class="t">14:31</div>
+            <div class="who">Sara R.<div class="meta">3rd visit · Marylebone</div></div>
+            <div class="table">Table 7 · 2 covers</div>
+            <div class="amt">£62.40</div>
+          </div>
+          <div class="feed">
+            <div class="t">13:48</div>
+            <div class="who">Matt K.<div class="meta">1st visit · new diner</div></div>
+            <div class="table">Table 12 · 4 covers</div>
+            <div class="amt">£128.10</div>
+          </div>
+          <div class="feed">
+            <div class="t">13:22</div>
+            <div class="who">Aisha H.<div class="meta">2nd visit · Marylebone</div></div>
+            <div class="table">Bar · 1 cover</div>
+            <div class="amt">£34.50</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roi" class="sec-cream-2">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">ROI calculator · drag the sliders</div>
+        <h2 class="display">Do the <span class="hl">maths.</span></h2>
+      </div>
+      <p class="lede">Your numbers, our model. Drag everything and watch the ROAS recalc live. No email gate. No "talk to sales". Just the numbers.</p>
+    </div>
+
+    <div class="roi">
+      <div class="roi-controls">
+        <div class="control">
+          <label>Average cover value <span class="v" id="aov-v">£42</span></label>
+          <input type="range" id="aov" min="20" max="120" value="42" step="1" />
+          <div class="hint">Ex. tip · per diner · GBP</div>
+        </div>
+        <div class="control">
+          <label>Cashback you'll offer <span class="v" id="cb-v">£8</span></label>
+          <input type="range" id="cb" min="3" max="30" value="8" step="1" />
+          <div class="hint">To the diner · the bait</div>
+        </div>
+        <div class="control">
+          <label>Monthly Klaim budget <span class="v" id="bud-v">£2,000</span></label>
+          <input type="range" id="bud" min="500" max="10000" value="2000" step="100" />
+          <div class="hint">Hard cap · we never exceed</div>
+        </div>
+        <div class="control">
+          <label>Repeat-visit rate <span class="v" id="rep-v">35%</span></label>
+          <input type="range" id="rep" min="10" max="70" value="35" step="1" />
+          <div class="hint">% of Klaimers who come back within 60d</div>
+        </div>
+      </div>
+
+      <div class="roi-out">
+        <div class="l">Your projected month</div>
+        <div class="big" id="rev-v">£10,500<small>Attributed revenue (incl. repeats)</small></div>
+        <div class="roi-grid">
+          <div class="roi-stat">
+            <div class="k">Covers driven</div>
+            <div class="v" id="cov-v">250</div>
+          </div>
+          <div class="roi-stat">
+            <div class="k">Effective ROAS</div>
+            <div class="v" id="roas-v">5.2×</div>
+          </div>
+          <div class="roi-stat">
+            <div class="k">Cost / cover</div>
+            <div class="v" id="cpc-v">£8</div>
+          </div>
+          <div class="roi-stat">
+            <div class="k">Repeat covers</div>
+            <div class="v" id="rep2-v">88</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="case">
+      <div>
+        <div style="font-family:'Bricolage Grotesque';font-size:80px;line-height:0;color:var(--ink)">"</div>
+        <q>We cancelled Meta ads in March. By May, Klaim was driving more first-time covers than the entire £4,000/mo paid social budget did at peak. And I can <em>see</em> it. That's the bit.</q>
+        <div class="who">
+          <div class="av">OB</div>
+          <div><div class="n">Olivia Bennett</div><div class="m">Co-owner · Ember &amp; Oak · Shoreditch</div></div>
+        </div>
+      </div>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="l">New covers / mo</div>
+          <div class="v">+312</div>
+          <div class="d">vs. baseline of 178</div>
+        </div>
+        <div class="case-stat">
+          <div class="l">Repeat rate</div>
+          <div class="v">42%</div>
+          <div class="d">within 60 days</div>
+        </div>
+        <div class="case-stat">
+          <div class="l">ROAS</div>
+          <div class="v">6.8×</div>
+          <div class="d">vs. 1.2× Meta avg</div>
+        </div>
+        <div class="case-stat">
+          <div class="l">Cost / cover</div>
+          <div class="v">£5.40</div>
+          <div class="d">all-in, gross of cashback</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="sec-cream-2">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">Onboarding</div>
+        <h2 class="display">Three steps. Live <span class="hl">this week.</span></h2>
+      </div>
+      <p class="lede">No integrations, no plugins, no till changes. Takes 20 minutes. Seriously, that's it.</p>
+    </div>
+    <div class="onb">
+      <div class="onb-step">
+        <div class="num">01</div>
+        <h3>Sign up your way</h3>
+        <p>Self-onboard directly on the site in a couple of minutes — or book a 15-min discovery call with the team if you'd rather walk through it with a human first.</p>
+      </div>
+      <div class="onb-step">
+        <div class="num">02</div>
+        <h3>Set up your venue</h3>
+        <p>Spin up your restaurant profile and configure your first drop — services, cashback offer, monthly cap. Takes 15 minutes. Done in your pyjamas.</p>
+      </div>
+      <div class="onb-step">
+        <div class="num">03</div>
+        <h3>Your first drop ships</h3>
+        <p>You appear in the next Monday or Friday drop. Covers start landing. Dashboard goes live the moment your first Klaimer pays. Usually before lunch on day 1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">No setup. No monthly. No surprise invoice.</div>
+        <h2 class="display">Pricing, <span class="hl">plain.</span></h2>
+      </div>
+      <p class="lede">We make money when you make money — full stop. One tier. One rate. That's it.</p>
+    </div>
+    <div class="pricing">
+      <div class="price-card featured">
+        <span class="tier">Only one plan exists</span>
+        <h3>Klaim Standard</h3>
+        <div class="price">£0</div>
+        <div class="price-sub">Setup · monthly · annual</div>
+        <ul>
+          <li>15% take rate on cashback (we earn when you do)</li>
+          <li>Set your own monthly cap — we never exceed</li>
+          <li>Full operator dashboard with cohort analysis</li>
+          <li>Weight offers by service (Mon/Tue/Wed boost etc.)</li>
+          <li>Real-time Slack &amp; email alerts on every cover</li>
+          <li>Pause, edit, or cancel any time, no notice</li>
+        </ul>
+        <div class="cta"><a href="#book" class="pill-btn lime lg">Book a demo →</a></div>
+      </div>
+      <div class="price-card">
+        <span class="tier">For context · what you'd pay elsewhere</span>
+        <h3>vs. paid social</h3>
+        <div class="price" style="color:var(--pink)">£18</div>
+        <div class="price-sub">per attributed cover · Meta Q1 2026 avg</div>
+        <ul style="opacity:.7">
+          <li>Pay before the cover happens</li>
+          <li>Attribution windows that... drift</li>
+          <li>"Reach" metrics nobody asked for</li>
+          <li>Creative budget on top</li>
+          <li>Agency fees, possibly</li>
+          <li>Lost sleep, spreadsheets, vibes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-ink">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eye">Operator FAQ</div>
+        <h2 class="display" style="color:var(--cream)">The actual demo <span class="hl">questions.</span></h2>
+      </div>
+      <p class="lede">So we figured we'd save you 12 minutes.</p>
+    </div>
+    <div class="faq-list" style="border-top-color:rgba(244,237,230,.2)">
+      <details open style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
+        <summary>How do you know it was *your* cover?</summary>
+        <p style="color:rgba(244,237,230,.75)">Each Klaimer has linked their bank via Open Banking. When they pay at your venue, we see the transaction (amount, time, MID) and match it against the offer they redeemed. Cashback only fires on a positive match — so every attributed cover has a real, settled card receipt behind it.</p>
+      </details>
+      <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
+        <summary>Can we cap budget by service or by day?</summary>
+        <p style="color:rgba(244,237,230,.75)">Yes. Monthly cap, weekly cap, and per-service cap (e.g. "only fire Mon-Wed lunch"). Dynamic cashback amounts per service too — push more on quiet shifts, less on the Friday rush.</p>
+      </details>
+      <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
+        <summary>Do we need to change anything at the till?</summary>
+        <p style="color:rgba(244,237,230,.75)">No. Zero front-of-house changes, no QR codes, no waiter scripts, no integration with your EPOS or POS. You keep operating exactly as you do today.</p>
+      </details>
+      <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
+        <summary>How does the take rate actually work?</summary>
+        <p style="color:rgba(244,237,230,.75)">We charge 15% of the cashback amount, on completed covers only. So if you offer £10 cashback and a diner redeems, you pay £10 to the diner + £1.50 to Klaim. £11.50 all-in for a real, attributed, repeat-eligible cover. That's it.</p>
+      </details>
+      <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
+        <summary>Can we kill it if it's not working?</summary>
+        <p style="color:rgba(244,237,230,.75)">Any time, no notice, no fee. Pause from the dashboard. Resume from the dashboard. We'd rather have happy operators than locked-in ones.</p>
+      </details>
+      <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
+        <summary>Will Klaim "train" diners to only come for the offer?</summary>
+        <p style="color:rgba(244,237,230,.75)">Data says no — repeat-visit rate is 35-45%, and the second visit is usually un-incentivised. The drop format means diners can't predict if you'll be in next week, so they don't wait for you. They just discover you, and most come back.</p>
+      </details>
+      <details style="border-bottom-color:rgba(244,237,230,.2);color:var(--cream)">
+        <summary>How do we get on a drop?</summary>
+        <p style="color:rgba(244,237,230,.75)">Book a 15-min demo. If it's a fit, you can be on the next Monday drop within 7 days. We onboard 8-14 London venues per month — currently a small waitlist for Soho &amp; Shoreditch.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="final">
+  <div class="container">
+    <div class="final-badge">Onboarding 14 venues this month</div>
+    <h2 class="display" style="margin-top:18px">Fill the table.<br/>Not the <span class="hl">feed.</span></h2>
+    <p>Book a 15-minute demo. We'll show you the dashboard, run your venue's projected ROAS live, and you can be on the next drop by Friday.</p>
+    <div class="actions">
+      <button class="pill-btn lime lg" onclick="alert('design placeholder')">Book a 15-min demo →</button>
+      <a href="#roi" class="pill-btn lg">Play with the calculator</a>
+    </div>
+    <small>£0 setup · pay per cover · London zones 1-2</small>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:18px;color:var(--cream)"><span class="mark">K</span> Klaim</div>
+        <p style="color:rgba(244,237,230,.6);font-size:14px;line-height:1.5;max-width:320px">Pay-per-cover acquisition for London's best independent restaurants &amp; cafés.</p>
+      </div>
+      <div>
+        <h4>For restaurants</h4>
+        <ul>
+          <li><a href="#why">Why Klaim</a></li>
+          <li><a href="#dash">Dashboard</a></li>
+          <li><a href="#roi">ROI calculator</a></li>
+          <li><a href="#book">Book a demo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>For diners</h4>
+        <ul>
+          <li><a href="diners.html">How it works</a></li>
+          <li><a href="diners.html#social">Drop Buddies</a></li>
+          <li><a href="diners.html#london">London coverage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div>© 2026 Klaim Ltd · Registered in England</div>
+      <div>London · UK</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const aov=document.getElementById('aov'),cb=document.getElementById('cb'),bud=document.getElementById('bud'),rep=document.getElementById('rep');
+  const aovV=document.getElementById('aov-v'),cbV=document.getElementById('cb-v'),budV=document.getElementById('bud-v'),repV=document.getElementById('rep-v');
+  const revV=document.getElementById('rev-v'),covV=document.getElementById('cov-v'),roasV=document.getElementById('roas-v'),cpcV=document.getElementById('cpc-v'),rep2V=document.getElementById('rep2-v');
+  const fmt=n=>'£'+Math.round(n).toLocaleString('en-GB');
+  function calc(){
+    const a=+aov.value,c=+cb.value,b=+bud.value,r=+rep.value/100;
+    const cov=Math.floor(b/c);
+    const repCov=Math.floor(cov*r);
+    const totalCov=cov+repCov;
+    const rev=totalCov*a;
+    const roas=rev/b;
+    aovV.textContent=fmt(a);cbV.textContent=fmt(c);budV.textContent=fmt(b);repV.textContent=Math.round(r*100)+'%';
+    revV.innerHTML=fmt(rev)+'<small>Attributed revenue (incl. repeats)</small>';
+    covV.textContent=cov.toLocaleString('en-GB');
+    roasV.textContent=roas.toFixed(1)+'×';
+    cpcV.textContent=fmt(c);
+    rep2V.textContent=repCov.toLocaleString('en-GB');
+  }
+  [aov,cb,bud,rep].forEach(el=>el.addEventListener('input',calc));calc();
+})();
+</script>
+</body>
+</html>
